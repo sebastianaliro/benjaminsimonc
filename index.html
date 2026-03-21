@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benjamín Carvajal — Fotógrafo</title>
+  <meta name="description" content="Fotógrafo especializado en retrato, matrimonios y fotografía comercial de moda.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVEGACIÓN
+═══════════════════════════════════════════ -->
+<nav id="nav">
+  <a href="#" class="logo">BC</a>
+  <ul class="links">
+    <li><a href="#ph" data-es="Inicio" data-en="Home">Inicio</a></li>
+    <li><a href="#pp" data-es="Portfolio" data-en="Portfolio">Portfolio</a></li>
+    <li><a href="#pc" data-es="Contacto" data-en="Contact">Contacto</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn on" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HÉROE — INICIO
+═══════════════════════════════════════════ -->
+<section id="ph">
+  <img class="hi" src="fotos/hero.jpg" alt="Benjamín Carvajal Fotógrafo">
+  <div class="ho"></div>
+  <div class="ht">
+    <p class="hl">
+      <span class="t-es">Fotógrafo</span>
+      <span class="t-en">Photographer</span>
+    </p>
+    <h1 class="hn">Benjamín<br><em>Carvajal</em></h1>
+  </div>
+  <div class="he">
+    <a href="#pp">
+      <span class="t-es">Portfolio</span>
+      <span class="t-en">Portfolio</span>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PORTFOLIO
+═══════════════════════════════════════════ -->
+<section id="pp">
+  <div class="ph">
+    <h1>Port<em>folio</em></h1>
+    <!-- Los filtros se generan dinámicamente desde config.js -->
+    <div class="ps" id="filters"></div>
+  </div>
+  <!-- Los proyectos se generan dinámicamente desde config.js -->
+  <div class="pl" id="projects"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTACTO
+═══════════════════════════════════════════ -->
+<section id="pc">
+  <div class="cw">
+    <div class="cl">
+      <h1 class="fi">
+        <span class="t-es">Con<em>tacto</em></span>
+        <span class="t-en">Con<em>tact</em></span>
+      </h1>
+      <p class="cb fi d1 t-es" id="bio-es"></p>
+      <p class="cb fi d1 t-en" id="bio-en"></p>
+      <div class="fi d2">
+        <p class="ll">
+          <span class="t-es">Disponible en</span>
+          <span class="t-en">Available in</span>
+        </p>
+        <div class="li" id="lugares"></div>
+      </div>
+    </div>
+    <div class="cr">
+      <div class="ib fi">
+        <p class="il">
+          <span class="t-es">Nombre</span>
+          <span class="t-en">Name</span>
+        </p>
+        <span class="iv" id="nombre-contacto"></span>
+      </div>
+      <div class="ib fi d1">
+        <p class="il">Email</p>
+        <span class="iv"><a id="email-link" href=""></a></span>
+      </div>
+      <div class="ib fi d2">
+        <p class="il">
+          <span class="t-es">Teléfono</span>
+          <span class="t-en">Phone</span>
+        </p>
+        <span class="iv"><a id="tel-link" href=""></a></span>
+      </div>
+      <div class="ib fi d3">
+        <a class="iv cta" id="cta-link" href="">
+          <span class="t-es">Escribir</span>
+          <span class="t-en">Get in touch</span>
+          &nbsp;→
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+  <span class="fn" id="footer-nombre"></span>
+  <span class="fc">
+    <span class="t-es">Fotógrafo</span>
+    <span class="t-en">Photographer</span>
+    &nbsp;·&nbsp;
+    <span id="footer-year"></span>
+  </span>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     LIGHTBOX
+═══════════════════════════════════════════ -->
+<div id="lb">
+  <button class="lb-close" onclick="closeLightbox()">×</button>
+  <button class="lb-prev" onclick="lbNav(-1)">‹</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-next" onclick="lbNav(1)">›</button>
+  <div class="lb-caption" id="lb-caption"></div>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════ -->
+<script src="config.js"></script>
+<script>
+/* ─────────────────────────────────────────────
+   INICIALIZACIÓN — lee config.js y construye el sitio
+───────────────────────────────────────────── */
+function init() {
+  const C = SITE_CONFIG;
+
+  // Datos de contacto
+  document.getElementById('bio-es').textContent = C.bio_es;
+  document.getElementById('bio-en').textContent = C.bio_en;
+  document.getElementById('nombre-contacto').textContent = C.nombre;
+  document.getElementById('footer-nombre').textContent = C.nombre;
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  const emailEl = document.getElementById('email-link');
+  emailEl.href = 'mailto:' + C.email;
+  emailEl.textContent = C.email;
+
+  const telEl = document.getElementById('tel-link');
+  telEl.href = 'tel:' + C.telefono.replace(/\s/g,'');
+  telEl.textContent = C.telefono;
+
+  document.getElementById('cta-link').href = 'mailto:' + C.email;
+
+  // Lugares disponibles
+  const lugaresEl = document.getElementById('lugares');
+  C.lugares.forEach(lugar => {
+    const span = document.createElement('span');
+    span.className = 'lit';
+    span.textContent = lugar;
+    lugaresEl.appendChild(span);
+  });
+
+  // Filtros de categoría
+  buildFilters();
+
+  // Proyectos
+  buildProjects();
+
+  // Hero
+  document.querySelector('.hi').src = C.hero_img;
+}
+
+/* ─────────────────────────────────────────────
+   FILTROS
+───────────────────────────────────────────── */
+let currentFilter = 'all';
+
+function buildFilters() {
+  const C = SITE_CONFIG;
+  const filtersEl = document.getElementById('filters');
+  const lang = getLang();
+
+  // Botón "Todo / All"
+  const allBtn = document.createElement('button');
+  allBtn.className = 'ps-filter active';
+  allBtn.dataset.filter = 'all';
+  allBtn.dataset.es = 'Todo';
+  allBtn.dataset.en = 'All';
+  allBtn.textContent = lang === 'es' ? 'Todo' : 'All';
+  allBtn.onclick = () => filterProjects('all');
+  filtersEl.appendChild(allBtn);
+
+  // Botones por categoría
+  Object.entries(C.categorias).forEach(([key, labels]) => {
+    const btn = document.createElement('button');
+    btn.className = 'ps-filter';
+    btn.dataset.filter = key;
+    btn.dataset.es = labels.es;
+    btn.dataset.en = labels.en;
+    btn.textContent = lang === 'es' ? labels.es : labels.en;
+    btn.onclick = () => filterProjects(key);
+    filtersEl.appendChild(btn);
+  });
+}
+
+function filterProjects(cat) {
+  currentFilter = cat;
+
+  // Update filter buttons
+  document.querySelectorAll('.ps-filter').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.filter === cat);
+  });
+
+  // Show/hide projects
+  document.querySelectorAll('.bs').forEach(block => {
+    if (cat === 'all' || block.dataset.category === cat) {
+      block.classList.remove('hidden');
+    } else {
+      block.classList.add('hidden');
+    }
+  });
+}
+
+/* ─────────────────────────────────────────────
+   PROYECTOS
+───────────────────────────────────────────── */
+function buildProjects() {
+  const C = SITE_CONFIG;
+  const container = document.getElementById('projects');
+  const lang = getLang();
+
+  C.proyectos.forEach((proyecto, pi) => {
+    const block = document.createElement('div');
+    block.className = 'bs';
+    block.dataset.category = proyecto.category;
+    block.dataset.projectId = pi;
+
+    // Determine grid class based on photo count
+    const count = proyecto.fotos.length;
+    let gridClass = 'g3';
+    if (count >= 16) gridClass = 'gfull';
+    else if (count >= 7) gridClass = 'g4';
+    else if (count === 4) gridClass = 'g4';
+    else if (count === 3) gridClass = 'g3';
+    else if (count === 2) gridClass = 'g2';
+
+    // Meta text — auto-generate if not set
+    const metaText = lang === 'es'
+      ? (proyecto.metaEs || count + ' imágenes')
+      : (proyecto.metaEn || count + ' images');
+
+    block.innerHTML = `
+      <div class="bh">
+        <span class="bn">
+          <span class="t-es">${proyecto.nameEs}</span>
+          <span class="t-en">${proyecto.nameEn}</span>
+        </span>
+        <span class="bm">
+          <span class="t-es">${proyecto.metaEs || count + ' imágenes'}</span>
+          <span class="t-en">${proyecto.metaEn || count + ' images'}</span>
+        </span>
+      </div>
+      <div class="${gridClass}" id="grid-${pi}"></div>
+    `;
+
+    const grid = block.querySelector(`#grid-${pi}`);
+
+    proyecto.fotos.forEach((src, fi) => {
+      const item = document.createElement('div');
+      item.className = 'pi';
+      item.onclick = () => openLightbox(pi, fi);
+      item.innerHTML = `<img src="${src}" alt="${proyecto.nameEs} — foto ${fi+1}" loading="lazy">`;
+      grid.appendChild(item);
+    });
+
+    container.appendChild(block);
+  });
+}
+
+/* ─────────────────────────────────────────────
+   LIGHTBOX
+───────────────────────────────────────────── */
+let lbProject = 0;
+let lbIndex = 0;
+
+function openLightbox(projectIdx, photoIdx) {
+  lbProject = projectIdx;
+  lbIndex = photoIdx;
+  updateLightbox();
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function lbNav(dir) {
+  const proyecto = SITE_CONFIG.proyectos[lbProject];
+  const total = proyecto.fotos.length;
+  lbIndex = (lbIndex + dir + total) % total;
+  const img = document.getElementById('lb-img');
+  img.classList.add('fade');
+  setTimeout(() => {
+    updateLightbox();
+    img.classList.remove('fade');
+  }, 200);
+}
+
+function updateLightbox() {
+  const proyecto = SITE_CONFIG.proyectos[lbProject];
+  const lang = getLang();
+  document.getElementById('lb-img').src = proyecto.fotos[lbIndex];
+  document.getElementById('lb-caption').textContent =
+    lang === 'es' ? proyecto.nameEs : proyecto.nameEn;
+  document.getElementById('lb-counter').textContent =
+    (lbIndex + 1) + ' / ' + proyecto.fotos.length;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lb').classList.contains('open')) return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') lbNav(1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') lbNav(-1);
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// Click outside image to close
+document.getElementById('lb').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+
+/* ─────────────────────────────────────────────
+   IDIOMA
+───────────────────────────────────────────── */
+function getLang() {
+  return localStorage.getItem('lang') || 'es';
+}
+
+function setLang(lang) {
+  localStorage.setItem('lang', lang);
+
+  // Toggle visibility
+  document.querySelectorAll('.t-es').forEach(el => {
+    el.style.display = lang === 'es' ? '' : 'none';
+  });
+  document.querySelectorAll('.t-en').forEach(el => {
+    el.style.display = lang === 'en' ? '' : 'none';
+  });
+
+  // Toggle button states
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('on', btn.textContent === lang.toUpperCase());
+  });
+
+  // Update filter button texts
+  document.querySelectorAll('.ps-filter').forEach(btn => {
+    btn.textContent = lang === 'es' ? btn.dataset.es : btn.dataset.en;
+  });
+
+  // Update nav links
+  document.querySelectorAll('.links a[data-es]').forEach(a => {
+    a.textContent = lang === 'es' ? a.dataset.es : a.dataset.en;
+  });
+
+  // Update lightbox if open
+  if (document.getElementById('lb').classList.contains('open')) {
+    updateLightbox();
+  }
+}
+
+/* ─────────────────────────────────────────────
+   NAV SCROLL EFFECT
+───────────────────────────────────────────── */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  nav.classList.toggle('sol', window.scrollY > 40);
+});
+
+/* ─────────────────────────────────────────────
+   SCROLL ANIMATIONS
+───────────────────────────────────────────── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('vis');
+  });
+}, { threshold: 0.1 });
+
+/* ─────────────────────────────────────────────
+   INICIO
+───────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  init();
+
+  // Apply saved language
+  setLang(getLang());
+
+  // Observe animated elements
+  document.querySelectorAll('.fi').forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>
