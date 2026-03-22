@@ -3,561 +3,556 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Benjamín Carvajal — Fotógrafo</title>
+<title>BC — Panel de administración</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
-<script>
-  // ============================================================
-  // CONFIGURACIÓN SUPABASE
-  // Reemplazá estos valores con los de tu proyecto
-  // Supabase → Settings → API → Project URL y anon key
-  // ============================================================
-  const SUPABASE_URL = 'https://hoqhzjyriyhdeymcnsmg.supabase.co';
-  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhvcWh6anlyaXloZGV5bWNuc21nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxOTE4NTAsImV4cCI6MjA4OTc2Nzg1MH0.Labf6gaRtEUDfxoZ9G6XKuE-lWYEA1EUyHZrZYeONzo';
-</script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --white:#ffffff;--off:#f8f7f5;--light:#e8e5e0;
-    --mid:#a8a5a0;--dark:#3a3835;--black:#1c1b19;
-    --accent:#8a8680;--gold:#c9b89a;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{background:var(--white);color:var(--black);font-family:'Jost',sans-serif;font-weight:300}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--k:#0a0a0a;--w:#f7f5f1;--g:#8a8a8a;--fd:'Cormorant Garamond',Georgia,serif;--fb:'Raleway',sans-serif}
+html,body{height:100%;background:var(--w);font-family:var(--fb);font-weight:300;-webkit-font-smoothing:antialiased;color:var(--k)}
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:26px 48px;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid rgba(0,0,0,.07)}
-  .nav-logo{font-family:'Jost',sans-serif;font-size:12px;font-weight:300;letter-spacing:3.5px;text-transform:uppercase;text-decoration:none;color:var(--black)}
-  .nav-links{display:flex;gap:36px;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
-  .nav-links a{font-size:12px;letter-spacing:1px;text-decoration:none;color:var(--black);transition:color .3s;font-weight:300}
-  .nav-links a:hover{color:var(--mid)}
-  .star-btn{background:none;border:none;cursor:pointer;padding:4px;transition:transform .6s ease,opacity .3s;opacity:.45;line-height:0}
-  .star-btn:hover{opacity:.9;transform:rotate(45deg)}
+/* ── LOGIN ── */
+#login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;background:var(--w)}
+.lc{width:300px}
+.lc-logo{font-family:var(--fd);font-size:30px;font-weight:300;letter-spacing:.1em;margin-bottom:4px}
+.lc-sub{font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--g);margin-bottom:44px}
+.lc-field{margin-bottom:18px}
+.lc-field label{display:block;font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--g);margin-bottom:7px}
+.lc-field input{width:100%;border:none;border-bottom:1px solid rgba(0,0,0,.15);background:none;padding:8px 0;font-family:var(--fb);font-size:13px;font-weight:300;color:var(--k);outline:none;transition:border-color .2s}
+.lc-field input:focus{border-bottom-color:var(--k)}
+.lc-btn{width:100%;margin-top:28px;background:var(--k);color:var(--w);border:none;padding:13px;font-family:var(--fb);font-size:9px;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;transition:opacity .2s}
+.lc-btn:hover{opacity:.7}
+.lc-err{font-size:11px;color:#b00;margin-top:10px;text-align:center;display:none}
 
-  #inicio{padding-top:78px}
-  .hero-inner{height:calc(100vh - 78px);position:relative;overflow:hidden}
-  .hero-img{width:100%;height:100%;object-fit:cover;display:block}
-  .hero-placeholder{width:100%;height:100%;background:var(--off);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
-  .hero-placeholder span{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--mid)}
-  .hero-caption{position:absolute;bottom:56px;left:48px;color:white}
-  .hero-caption h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6.5vw,96px);font-weight:300;line-height:.92}
-  .hero-caption h1 em{font-style:italic}
-  .hero-caption p{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:16px}
+/* ── DASHBOARD ── */
+#dashboard{display:none;min-height:100vh;flex-direction:column}
+.topbar{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(0,0,0,.08);background:var(--w);position:sticky;top:0;z-index:50}
+.topbar-brand{font-family:var(--fd);font-size:18px;font-weight:300;letter-spacing:.06em}
+.topbar-right{display:flex;align-items:center;gap:20px}
+.topbar-user{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--g)}
+.topbar-logout{background:none;border:none;font-family:var(--fb);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--g);cursor:pointer;transition:color .2s;padding:0}
+.topbar-logout:hover{color:var(--k)}
 
-  .port-header{padding:64px 48px 36px;display:flex;justify-content:space-between;align-items:baseline}
-  .port-header h2{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;font-style:italic}
-  .port-count{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)}
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-  .gitem{overflow:hidden;cursor:pointer;position:relative;background:var(--off)}
-  .gitem img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94),opacity .4s}
-  .gitem:hover img{transform:scale(1.03);opacity:.9}
-  .gcap{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,.55));color:white;font-size:9px;letter-spacing:2px;text-transform:uppercase;opacity:0;transition:opacity .4s}
-  .gitem:hover .gcap{opacity:1}
-  .gallery-empty{grid-column:1/-1;padding:100px 48px;text-align:center;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mid)}
+.layout{display:flex;flex:1;min-height:calc(100vh - 56px)}
 
-  .lightbox{display:none;position:fixed;inset:0;z-index:500;background:rgba(28,27,25,.97);align-items:center;justify-content:center}
-  .lightbox.open{display:flex}
-  .lightbox img{max-width:88vw;max-height:88vh;object-fit:contain}
-  .lb-x{position:absolute;top:24px;right:32px;color:rgba(255,255,255,.5);background:none;border:none;font-size:22px;cursor:pointer;transition:color .3s}
-  .lb-x:hover{color:white}
-  .lb-arr{position:absolute;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.35);background:none;border:none;font-size:30px;cursor:pointer;padding:16px;transition:color .3s}
-  .lb-arr:hover{color:white}
-  .lb-l{left:12px}.lb-r{right:12px}
+/* ── SIDEBAR ── */
+.sidebar{width:200px;min-width:200px;border-right:1px solid rgba(0,0,0,.08);background:var(--w);padding:32px 0}
+.nav-item{display:block;width:100%;background:none;border:none;border-left:2px solid transparent;padding:11px 32px;font-family:var(--fb);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--g);cursor:pointer;text-align:left;transition:color .2s,border-color .2s}
+.nav-item:hover{color:var(--k)}
+.nav-item.active{color:var(--k);border-left-color:var(--k);font-weight:400}
 
-  #contacto{padding:120px 48px 100px;max-width:580px;margin:0 auto;text-align:center;border-top:1px solid var(--light)}
-  .ct-greet{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:28px}
-  .ct-bio{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;font-weight:300;line-height:1.65;color:var(--dark);margin-bottom:52px}
-  .ct-links{display:flex;flex-direction:column;gap:20px;align-items:center}
-  .ct-link{font-size:13px;letter-spacing:.5px;color:var(--black);text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent;transition:border-color .3s,color .3s}
-  .ct-link:hover{border-color:var(--mid);color:var(--accent)}
+/* ── CONTENT ── */
+.content{flex:1;padding:48px 56px;overflow-y:auto;background:var(--w)}
+.section{display:none}
+.section.active{display:block}
+.sec-title{font-family:var(--fd);font-size:36px;font-weight:300;margin-bottom:4px}
+.sec-title em{font-style:italic}
+.sec-sub{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--g);margin-bottom:40px}
 
-  footer{border-top:1px solid var(--light);padding:26px 48px;display:flex;justify-content:space-between;align-items:center}
-  .f-name,.f-right{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)}
+/* ── FIELDS ── */
+.field{margin-bottom:24px}
+.field label{display:block;font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--g);margin-bottom:8px}
+.field input,.field textarea{width:100%;border:none;border-bottom:1px solid rgba(0,0,0,.12);background:none;padding:9px 0;font-family:var(--fb);font-size:13px;font-weight:300;color:var(--k);outline:none;resize:vertical;transition:border-color .2s;line-height:1.6}
+.field input:focus,.field textarea:focus{border-bottom-color:var(--k)}
+.field textarea{min-height:90px}
 
-  .modal-bg{display:none;position:fixed;inset:0;z-index:600;background:rgba(28,27,25,.45);align-items:center;justify-content:center;backdrop-filter:blur(4px)}
-  .modal-bg.open{display:flex}
-  .mbox{background:var(--white);padding:52px 48px;width:90%;max-width:420px;position:relative}
-  .mbox h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:4px}
-  .mbox .msub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:36px}
-  .mx{position:absolute;top:16px;right:20px;background:none;border:none;font-size:18px;cursor:pointer;color:var(--mid)}
-  .mf{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
-  .mf label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--mid)}
-  .mf input{border:none;border-bottom:1px solid var(--light);padding:11px 0;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;color:var(--black);outline:none;background:transparent;transition:border-color .3s}
-  .mf input:focus{border-color:var(--black)}
-  .mbtn{width:100%;background:var(--black);color:white;border:none;padding:15px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-top:8px;transition:background .3s}
-  .mbtn:hover{background:var(--accent)}
-  .merr{font-size:11px;color:#c0392b;margin-top:10px;letter-spacing:.5px;min-height:16px}
+/* ── LUGARES ── */
+.lugares-list{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.lugar-row{display:flex;align-items:center;gap:8px}
+.lugar-row input{flex:1;border:none;border-bottom:1px solid rgba(0,0,0,.1);background:none;padding:7px 0;font-family:var(--fb);font-size:13px;font-weight:300;color:var(--k);outline:none;transition:border-color .2s}
+.lugar-row input:focus{border-bottom-color:var(--k)}
+.btn-del-small{background:none;border:none;cursor:pointer;color:#ccc;font-size:14px;padding:2px 6px;transition:color .2s;flex-shrink:0}
+.btn-del-small:hover{color:#c00}
+.btn-add-lugar{background:none;border:1px dashed rgba(0,0,0,.2);padding:8px 16px;font-family:var(--fb);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--g);cursor:pointer;transition:border-color .2s,color .2s;margin-top:4px}
+.btn-add-lugar:hover{border-color:var(--k);color:var(--k)}
 
-  #admin{display:none;position:fixed;inset:0;z-index:700;overflow-y:auto;background:#161513}
-  #admin.open{display:block}
-  .ah{background:#0d0d0b;padding:17px 36px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;border-bottom:1px solid #242421}
-  .ah-logo{font-family:'Cormorant Garamond',serif;font-size:17px;color:#eeebe6;letter-spacing:1px}
-  .ah-logo small{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-left:12px}
-  .ah-btns{display:flex;gap:10px;align-items:center}
-  .ah-save{background:var(--gold);color:#0d0d0b;border:none;padding:8px 22px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:opacity .3s}
-  .ah-save:hover{opacity:.75}
-  .ah-save:disabled{opacity:.4;cursor:wait}
-  .ah-exit{background:transparent;color:var(--accent);border:1px solid #242421;padding:8px 16px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:color .3s}
-  .ah-exit:hover{color:#eeebe6}
-  .sync-st{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
-  .ab{display:grid;grid-template-columns:192px 1fr;min-height:calc(100vh - 54px)}
-  .aside{background:#0d0d0b;border-right:1px solid #242421;padding:24px 0}
-  .atab{display:block;width:100%;padding:12px 26px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);cursor:pointer;background:none;border:none;border-left:2px solid transparent;text-align:left;transition:all .2s}
-  .atab:hover{color:#eeebe6}
-  .atab.on{color:#eeebe6;border-left-color:var(--gold)}
-  .amain{padding:44px 52px}
-  .asec{display:none}
-  .asec.on{display:block}
-  .asec-t{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#eeebe6;margin-bottom:4px}
-  .asec-s{font-size:10px;color:var(--accent);letter-spacing:1px;margin-bottom:32px}
-  .af{margin-bottom:24px}
-  .af label{display:block;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
-  .af input,.af textarea{width:100%;background:#0d0d0b;border:1px solid #242421;padding:11px 13px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#eeebe6;outline:none;transition:border-color .3s;resize:vertical}
-  .af input:focus,.af textarea:focus{border-color:var(--gold)}
-  .adiv{border:none;border-top:1px solid #242421;margin:32px 0}
-  .uzone{border:1px dashed #242421;padding:32px;text-align:center;cursor:pointer;transition:border-color .3s;margin-bottom:16px;position:relative;background:#0d0d0b}
-  .uzone:hover{border-color:var(--gold)}
-  .uzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-  .ui{font-size:26px;display:block;margin-bottom:8px}
-  .ut{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
-  .uh{font-size:11px;color:#2e2e2b}
-  .urow{display:flex;gap:10px;margin-bottom:24px}
-  .uinp{flex:1;background:#0d0d0b;border:1px solid #242421;padding:10px 13px;font-family:'Jost',sans-serif;font-size:12px;font-weight:300;color:#eeebe6;outline:none;transition:border-color .3s}
-  .uinp:focus{border-color:var(--gold)}
-  .uinp::placeholder{color:#2e2e2b}
-  .ubtn{background:#242421;color:#eeebe6;border:none;padding:10px 18px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .3s}
-  .ubtn:hover{background:var(--gold);color:#0d0d0b}
-  .ubtn:disabled{opacity:.4;cursor:wait}
-  .apgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:4px}
-  .apc{position:relative;aspect-ratio:2/3;background:#0d0d0b;border:1px solid #242421;overflow:hidden}
-  .apc img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .3s}
-  .apc:hover img{opacity:.25}
-  .apov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
-  .apc:hover .apov{opacity:1}
-  .adel{background:#c0392b;color:white;border:none;padding:6px 13px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
-  .acap{position:absolute;bottom:0;left:0;right:0;background:rgba(13,13,11,.88);border:none;border-top:1px solid #242421;padding:6px 9px;font-family:'Jost',sans-serif;font-size:10px;color:#eeebe6;outline:none;z-index:2}
-  .aempty{grid-column:1/-1;padding:56px;text-align:center;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#2e2e2b}
-  .srow{display:grid;grid-template-columns:105px 1fr;gap:12px;align-items:center;padding:12px 14px;background:#0d0d0b;border:1px solid #242421;margin-bottom:8px}
-  .slbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
-  .sinp{background:transparent;border:none;border-bottom:1px solid #242421;padding:7px 0;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#eeebe6;outline:none;width:100%;transition:border-color .3s}
-  .sinp:focus{border-color:var(--gold)}
-  .pwbox{background:#0d0d0b;border:1px solid #242421;padding:28px;max-width:360px}
-  .pprog{display:none;background:#0d0d0b;border:1px solid #242421;padding:14px;margin-bottom:14px}
-  .pprog.show{display:block}
-  .pprog-bg{background:#242421;height:2px;margin-top:8px}
-  .pprog-bar{background:var(--gold);height:2px;width:0%;transition:width .3s}
-  .pprog-txt{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
-  .toast{position:fixed;bottom:32px;right:32px;background:#242421;color:#eeebe6;padding:13px 20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;z-index:999;transform:translateY(70px);opacity:0;transition:all .4s cubic-bezier(.25,.46,.45,.94);pointer-events:none}
-  .toast.show{transform:translateY(0);opacity:1}
-  .ldov{display:none;position:fixed;inset:0;z-index:800;background:rgba(255,255,255,.9);align-items:center;justify-content:center;flex-direction:column;gap:16px}
-  .ldov.show{display:flex}
-  .ldspin{width:24px;height:24px;border:2px solid var(--light);border-top-color:var(--black);border-radius:50%;animation:spin .8s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .ldtxt{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mid)}
+/* ── SAVE BTN ── */
+.btn-save{background:var(--k);color:var(--w);border:none;padding:12px 32px;font-family:var(--fb);font-size:9px;letter-spacing:.26em;text-transform:uppercase;cursor:pointer;transition:opacity .2s;margin-top:8px}
+.btn-save:hover{opacity:.7}
+.save-ok{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--g);margin-left:14px;display:none}
 
-  @media(max-width:768px){
-    nav{padding:18px 24px}
-    .nav-links{display:none}
-    .hero-caption{left:24px;bottom:44px}
-    .port-header{padding:44px 24px 24px}
-    .gallery{grid-template-columns:repeat(2,1fr)}
-    #contacto{padding:80px 24px}
-    footer{padding:22px 24px;flex-direction:column;gap:8px;text-align:center}
-    .ab{grid-template-columns:1fr}
-    .aside{display:none}
-    .amain{padding:24px 18px}
-  }
+/* ── PROJECTS (Marcas) ── */
+.project-block{border:1px solid rgba(0,0,0,.08);padding:20px 24px;margin-bottom:16px;background:#fafaf8}
+.project-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+.project-name{font-family:var(--fd);font-size:20px;font-weight:300}
+.project-name-inputs{display:flex;gap:16px;flex:1;margin-right:16px}
+.project-name-inputs input{flex:1;border:none;border-bottom:1px solid rgba(0,0,0,.1);background:none;padding:4px 0;font-family:var(--fd);font-size:18px;font-weight:300;color:var(--k);outline:none}
+.project-name-inputs input:focus{border-bottom-color:var(--k)}
+.btn-del-project{background:none;border:none;cursor:pointer;color:#ccc;font-size:13px;letter-spacing:.1em;font-family:var(--fb);padding:4px 8px;transition:color .2s}
+.btn-del-project:hover{color:#c00}
+
+.photos-list{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.photo-row{display:flex;align-items:center;gap:8px}
+.photo-row input{flex:1;border:none;border-bottom:1px solid rgba(0,0,0,.08);background:none;padding:6px 0;font-family:var(--fb);font-size:11px;font-weight:300;color:#555;outline:none;transition:border-color .2s}
+.photo-row input:focus{border-bottom-color:var(--k)}
+.btn-add-photo{background:none;border:1px dashed rgba(0,0,0,.15);padding:7px 14px;font-family:var(--fb);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#aaa;cursor:pointer;width:100%;transition:border-color .2s,color .2s}
+.btn-add-photo:hover{border-color:var(--k);color:var(--k)}
+
+.btn-add-project{background:none;border:1px solid var(--k);padding:11px 24px;font-family:var(--fb);font-size:9px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;color:var(--k);width:100%;margin-top:8px;transition:background .2s,color .2s}
+.btn-add-project:hover{background:var(--k);color:var(--w)}
+
+/* ── HINT ── */
+.hint{font-size:11px;color:var(--g);line-height:1.6;margin-bottom:20px}
+.hint code{background:rgba(0,0,0,.05);padding:2px 5px;font-size:10px}
+
+/* ── HERO PREVIEW ── */
+.hero-preview{width:100%;max-width:360px;aspect-ratio:3/4;object-fit:cover;object-position:top;border:1px solid rgba(0,0,0,.08);margin-bottom:20px;display:block;background:#eee}
+
+/* ── EXPORT ── */
+.export-bar{margin-top:40px;padding-top:28px;border-top:1px solid rgba(0,0,0,.08)}
+.export-hint{font-size:10px;color:var(--g);letter-spacing:.1em;line-height:1.7;margin-bottom:14px}
+.export-hint code{background:rgba(0,0,0,.05);padding:2px 5px;font-size:10px}
+.btn-export{background:rgba(0,0,0,.04);border:none;padding:11px 24px;font-family:var(--fb);font-size:9px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;color:var(--k);transition:background .2s}
+.btn-export:hover{background:rgba(0,0,0,.09)}
+
+/* ── EXPORT MODAL ── */
+#export-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;align-items:center;justify-content:center}
+.exp-inner{background:#fff;width:640px;max-width:95vw;border-radius:2px;display:flex;flex-direction:column;max-height:85vh;overflow:hidden}
+.exp-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #eee}
+.exp-header span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--g)}
+.exp-header button{background:none;border:none;font-size:20px;cursor:pointer;color:#999;padding:2px 8px}
+#export-text{flex:1;padding:16px 20px;font-family:monospace;font-size:11px;border:none;resize:none;outline:none;color:#333;line-height:1.5;overflow-y:auto;min-height:300px}
+.exp-actions{display:flex;gap:8px;padding:14px 20px;border-top:1px solid #eee}
+.exp-actions button{flex:1;padding:10px;font-family:var(--fb);font-size:9px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;border:none;transition:opacity .2s}
+.exp-copy{background:var(--k);color:var(--w)}
+.exp-close{background:#eee;color:var(--k)}
+.exp-actions button:hover{opacity:.75}
+
+/* ── FLASH ── */
+.flash{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:var(--k);color:var(--w);padding:10px 28px;font-family:var(--fb);font-size:9px;letter-spacing:.18em;text-transform:uppercase;z-index:300;animation:fIn .2s ease}
+@keyframes fIn{from{opacity:0;transform:translateX(-50%) translateY(6px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+
+@media(max-width:700px){
+  .sidebar{width:160px;min-width:160px}
+  .content{padding:32px 24px}
+  .nav-item{padding:11px 20px}
+  .topbar{padding:0 20px}
+}
 </style>
 </head>
 <body>
 
-<div class="ldov" id="ldov"><div class="ldspin"></div><p class="ldtxt">Cargando</p></div>
-
-<nav>
-  <a href="#inicio" class="nav-logo" id="nav-name">Benjamín Carvajal</a>
-  <ul class="nav-links">
-    <li><a href="#portfolio">portfolio.</a></li>
-    <li><a href="#contacto">contact.</a></li>
-  </ul>
-  <button class="star-btn" id="open-login" title="Administración" aria-label="Panel de administración">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2C12 2 13 8 12 12C11 16 12 22 12 22" stroke="#888480" stroke-width="1.4" stroke-linecap="round"/>
-      <path d="M2 12C2 12 8 11 12 12C16 13 22 12 22 12" stroke="#888480" stroke-width="1.4" stroke-linecap="round"/>
-      <path d="M5.5 5.5C5.5 5.5 9 9 12 12C15 15 18.5 18.5 18.5 18.5" stroke="#888480" stroke-width="0.6" stroke-linecap="round" opacity="0.4"/>
-      <path d="M18.5 5.5C18.5 5.5 15 9 12 12C9 15 5.5 18.5 5.5 18.5" stroke="#888480" stroke-width="0.6" stroke-linecap="round" opacity="0.4"/>
-    </svg>
-  </button>
-</nav>
-
-<section id="inicio">
-  <div class="hero-inner">
-    <img id="hero-img" class="hero-img" src="" alt="" style="display:none">
-    <div id="hero-ph" class="hero-placeholder">
-      <span>portada</span>
-      <span style="font-size:9px;opacity:.5;letter-spacing:2px">configurá desde el panel</span>
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="lc">
+    <div class="lc-logo">Benjamín<br><em style="font-style:italic">Carvajal</em></div>
+    <div class="lc-sub">Panel de administración</div>
+    <div class="lc-field">
+      <label>Usuario</label>
+      <input type="text" id="l-user" placeholder="admin" autocomplete="username">
     </div>
-    <div class="hero-caption">
-      <h1 id="hero-h1">Benjamín<br><em>Carvajal</em></h1>
-      <p id="hero-sub">Fotógrafo · Photographer</p>
+    <div class="lc-field">
+      <label>Contraseña</label>
+      <input type="password" id="l-pass" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
     </div>
-  </div>
-</section>
-
-<section id="portfolio">
-  <div class="port-header">
-    <h2>portfolio.</h2>
-    <span class="port-count" id="photo-count"></span>
-  </div>
-  <div class="gallery" id="pub-gallery"></div>
-</section>
-
-<section id="contacto">
-  <p class="ct-greet" id="ct-greet">— hola</p>
-  <p class="ct-bio" id="ct-bio">Disponible en Latinoamérica y Europa.</p>
-  <div class="ct-links">
-    <a href="#" class="ct-link" id="pub-email"><span class="__cf_email__" data-cfemail="1d7572717c5d7f7873777c7074737e337e7270">[email&#160;protected]</span></a>
-    <a href="#" class="ct-link" id="pub-phone">+54 11 0000-0000</a>
-    <a href="#" class="ct-link" id="pub-ig" target="_blank">@benjaminsimonc</a>
-  </div>
-</section>
-
-<footer>
-  <span class="f-name" id="f-name">Benjamín Carvajal</span>
-  <span class="f-right" id="f-right">Fotógrafo · 2026</span>
-</footer>
-
-<div class="lightbox" id="lb">
-  <button class="lb-x" onclick="lbClose()">&#x2715;</button>
-  <button class="lb-arr lb-l" onclick="lbNav(-1)">&#x2039;</button>
-  <img id="lb-img" src="" alt="">
-  <button class="lb-arr lb-r" onclick="lbNav(1)">&#x203A;</button>
-</div>
-
-<div class="modal-bg" id="login-modal">
-  <div class="mbox">
-    <button class="mx" onclick="closeModal('login-modal')">&#x2715;</button>
-    <h2>Acceder</h2>
-    <p class="msub">Panel de administración</p>
-    <div class="mf"><label>Usuario</label><input type="text" id="l-user" autocomplete="username"></div>
-    <div class="mf"><label>Contraseña</label><input type="password" id="l-pass" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"></div>
-    <button class="mbtn" onclick="doLogin()">Ingresar</button>
-    <div class="merr" id="l-err"></div>
+    <button class="lc-btn" onclick="doLogin()">Ingresar</button>
+    <div class="lc-err" id="l-err">Usuario o contraseña incorrectos</div>
   </div>
 </div>
 
-<div id="admin">
-  <div class="ah">
-    <div class="ah-logo">BC <small>Administración</small></div>
-    <div class="ah-btns">
-      <span class="sync-st" id="sync-st"></span>
-      <button class="ah-save" id="save-btn" onclick="saveAll()">Guardar cambios</button>
-      <button class="ah-exit" onclick="exitAdmin()">&#x2190; Salir</button>
+<!-- DASHBOARD -->
+<div id="dashboard">
+  <div class="topbar">
+    <span class="topbar-brand">BC — Panel de edición</span>
+    <div class="topbar-right">
+      <span class="topbar-user" id="tb-user"></span>
+      <button class="topbar-logout" onclick="doLogout()">Salir</button>
     </div>
   </div>
-  <div class="ab">
-    <div class="aside">
-      <button class="atab on" onclick="sw('s-inicio',this)">Portada</button>
-      <button class="atab" onclick="sw('s-portfolio',this)">Portfolio</button>
-      <button class="atab" onclick="sw('s-contacto',this)">Contacto</button>
-      <button class="atab" onclick="sw('s-general',this)">General</button>
-      <button class="atab" onclick="sw('s-clave',this)">Contraseña</button>
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <button class="nav-item active" onclick="showSec('bio',this)">Bio</button>
+      <button class="nav-item" onclick="showSec('marcas',this)">Marcas</button>
+      <button class="nav-item" onclick="showSec('diary',this)">Diary</button>
+      <button class="nav-item" onclick="showSec('hero',this)">Portada</button>
     </div>
-    <div class="amain">
 
-      <div class="asec on" id="s-inicio">
-        <h2 class="asec-t">Portada</h2>
-        <p class="asec-s">Imagen de fondo y texto principal</p>
-        <div class="pprog" id="hprog"><p class="pprog-txt" id="hprog-txt">Subiendo...</p><div class="pprog-bg"><div class="pprog-bar" id="hprog-bar"></div></div></div>
-        <div class="uzone" id="hero-zone">
-          <input type="file" accept="image/*" id="hero-file" onchange="heroFile(this)">
-          <span class="ui">&#x1F4F8;</span>
-          <p class="ut">Subir foto desde la computadora</p>
-          <p class="uh">JPG / PNG / WebP — horizontal recomendado</p>
+    <!-- CONTENT -->
+    <div class="content">
+
+      <!-- BIO -->
+      <div class="section active" id="sec-bio">
+        <div class="sec-title">Bio</div>
+        <div class="sec-sub">Textos, contacto y ubicaciones</div>
+
+        <div class="field">
+          <label>Nombre</label>
+          <input type="text" id="b-nombre" placeholder="Benjamín Carvajal">
         </div>
-        <div class="urow">
-          <input type="text" class="uinp" id="hero-url" placeholder="O pegá un link de imagen (Canva, Drive, Dropbox…)">
-          <button class="ubtn" onclick="heroUrl()">Usar link</button>
+        <div class="field">
+          <label>Bio (español)</label>
+          <textarea id="b-bio-es" rows="4"></textarea>
         </div>
-        <hr class="adiv">
-        <div class="af"><label>Nombre — línea 1</label><input type="text" id="a-h1" value="Benjamín"></div>
-        <div class="af"><label>Nombre — línea 2 (en itálica)</label><input type="text" id="a-h2" value="Carvajal"></div>
-        <div class="af"><label>Subtítulo debajo del nombre</label><input type="text" id="a-hsub" value="Fotógrafo · Photographer"></div>
-      </div>
-
-      <div class="asec" id="s-portfolio">
-        <h2 class="asec-t">Portfolio</h2>
-        <p class="asec-s">Agregá, editá y eliminá fotos de tu galería</p>
-        <div class="pprog" id="pprog"><p class="pprog-txt" id="pprog-txt">Subiendo...</p><div class="pprog-bg"><div class="pprog-bar" id="pprog-bar"></div></div></div>
-        <div class="uzone">
-          <input type="file" accept="image/*" multiple id="port-file" onchange="portFile(this)">
-          <span class="ui">&#x1F5BC;</span>
-          <p class="ut">Subir fotos desde la computadora</p>
-          <p class="uh">Podés seleccionar varias a la vez · se guardan en la nube</p>
+        <div class="field">
+          <label>Bio (english)</label>
+          <textarea id="b-bio-en" rows="4"></textarea>
         </div>
-        <div class="urow">
-          <input type="text" class="uinp" id="port-url" placeholder="Link de imagen (Canva, Drive…)">
-          <input type="text" class="uinp" id="port-cap" placeholder="Descripción (opcional)" style="max-width:180px">
-          <button class="ubtn" id="pbtn" onclick="portUrl()">Agregar</button>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="b-email">
         </div>
-        <div class="apgrid" id="admin-grid"><div class="aempty">Cargando fotos...</div></div>
-      </div>
+        <div class="field">
+          <label>Teléfono</label>
+          <input type="text" id="b-tel">
+        </div>
 
-      <div class="asec" id="s-contacto">
-        <h2 class="asec-t">Contacto</h2>
-        <p class="asec-s">Textos y datos de contacto visibles en el sitio</p>
-        <div class="af"><label>Saludo (ej: "— hola")</label><input type="text" id="a-greet" value="— hola"></div>
-        <div class="af"><label>Texto / bio</label><textarea id="a-bio" rows="4">Disponible en Latinoamérica y Europa.</textarea></div>
-        <hr class="adiv">
-        <div class="srow"><span class="slbl">Email</span><input type="email" class="sinp" id="a-email" value="hola@benjaminc.com"></div>
-        <div class="srow"><span class="slbl">Teléfono</span><input type="text" class="sinp" id="a-phone" value="+54 11 0000-0000"></div>
-        <div class="srow"><span class="slbl">Instagram @</span><input type="text" class="sinp" id="a-ig" value="@benjaminsimonc"></div>
-        <div class="srow"><span class="slbl">Link Instagram</span><input type="text" class="sinp" id="a-ig-url" value="https://instagram.com/benjaminsimonc"></div>
-      </div>
+        <div class="field">
+          <label>Disponible en / Available in</label>
+          <div class="lugares-list" id="lugares-list"></div>
+          <button class="btn-add-lugar" onclick="addLugar()">+ Agregar lugar</button>
+        </div>
 
-      <div class="asec" id="s-general">
-        <h2 class="asec-t">General</h2>
-        <p class="asec-s">Textos generales del sitio</p>
-        <div class="af"><label>Nombre en la barra de navegación</label><input type="text" id="a-nav" value="Benjamín Carvajal"></div>
-        <div class="af"><label>Nombre en el pie de página</label><input type="text" id="a-fn" value="Benjamín Carvajal"></div>
-        <div class="af"><label>Texto derecho del pie</label><input type="text" id="a-fr" value="Fotógrafo · 2026"></div>
-      </div>
+        <div>
+          <button class="btn-save" onclick="saveBio()">Guardar bio</button>
+          <span class="save-ok" id="bio-ok">✓ Guardado</span>
+        </div>
 
-      <div class="asec" id="s-clave">
-        <h2 class="asec-t">Contraseña</h2>
-        <p class="asec-s">Cambiá la clave de acceso al panel</p>
-        <div class="pwbox">
-          <div class="af"><label>Contraseña actual</label><input type="password" id="pw-c"></div>
-          <div class="af"><label>Nueva contraseña</label><input type="password" id="pw-n"></div>
-          <div class="af"><label>Confirmar nueva</label><input type="password" id="pw-r"></div>
-          <button class="ah-save" style="width:100%;margin-top:4px" onclick="chgPw()">Cambiar contraseña</button>
-          <div class="merr" id="pw-err"></div>
+        <div class="export-bar">
+          <div class="export-hint">
+            Los cambios se aplican en vivo en el sitio. Para que queden permanentes, exportá el <code>config.js</code> y reemplazalo en GitHub.
+          </div>
+          <button class="btn-export" onclick="openExport()">Exportar config.js</button>
         </div>
       </div>
 
+      <!-- MARCAS -->
+      <div class="section" id="sec-marcas">
+        <div class="sec-title">Mar<em>cas</em></div>
+        <div class="sec-sub">Proyectos y fotos del portfolio</div>
+        <div class="hint">Editá los nombres (ES / EN) y las rutas de fotos de cada proyecto. Las rutas son relativas a la carpeta <code>fotos/</code>.</div>
+        <div id="marcas-list"></div>
+        <button class="btn-add-project" onclick="addProject('marcas')">+ Agregar proyecto</button>
+
+        <div class="export-bar">
+          <button class="btn-export" onclick="openExport()">Exportar config.js</button>
+        </div>
+      </div>
+
+      <!-- DIARY -->
+      <div class="section" id="sec-diary">
+        <div class="sec-title">Dia<em>ry</em></div>
+        <div class="sec-sub">Fotos personales y cotidianas</div>
+        <div class="hint">Agregá o quitá rutas de fotos para el Diary. Ej: <code>fotos/diary/01.jpg</code></div>
+        <div id="diary-list"></div>
+
+        <div class="export-bar">
+          <button class="btn-export" onclick="openExport()">Exportar config.js</button>
+        </div>
+      </div>
+
+      <!-- HERO -->
+      <div class="section" id="sec-hero">
+        <div class="sec-title">Por<em>tada</em></div>
+        <div class="sec-sub">Foto principal del sitio</div>
+
+        <img id="hero-preview" class="hero-preview" src="" alt="Preview portada">
+
+        <div class="field">
+          <label>Ruta de la foto de portada</label>
+          <input type="text" id="h-src" placeholder="fotos/hero.jpg" oninput="previewHero(this.value)">
+        </div>
+
+        <div class="hint">Para cambiar la portada: subí la foto nueva a la carpeta <code>fotos/</code> en GitHub y escribí acá la ruta.</div>
+
+        <div>
+          <button class="btn-save" onclick="saveHero()">Guardar portada</button>
+          <span class="save-ok" id="hero-ok">✓ Guardado</span>
+        </div>
+
+        <div class="export-bar">
+          <button class="btn-export" onclick="openExport()">Exportar config.js</button>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </div><!-- /layout -->
+</div><!-- /dashboard -->
+
+<!-- EXPORT MODAL -->
+<div id="export-modal">
+  <div class="exp-inner">
+    <div class="exp-header">
+      <span>Copiá este texto → reemplazá config.js en GitHub</span>
+      <button onclick="closeExport()">×</button>
+    </div>
+    <textarea id="export-text" readonly></textarea>
+    <div class="exp-actions">
+      <button class="exp-copy" onclick="copyConfig()">Copiar al portapapeles</button>
+      <button class="exp-close" onclick="closeExport()">Cerrar</button>
     </div>
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<script>
+/* ── AUTH ── */
+const CREDS = { admin: 'bsc2024' };
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ================================================================
-// SUPABASE INIT
-// ================================================================
-let sb;
-function isConfigured(){return SUPABASE_URL!=='TU_SUPABASE_URL'&&SUPABASE_ANON_KEY!=='TU_SUPABASE_ANON_KEY';}
-try{if(isConfigured())sb=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);}catch(e){}
-
-const LOCAL_KEY='bcv2';
-const T_SET='bc_settings',T_PH='bc_photos',BUCKET='bc-photos';
-
-const DEF={username:'benjamin',password:'foto2026',heroImg:'',heroN1:'Benjamín',heroN2:'Carvajal',heroSub:'Fotógrafo · Photographer',navNm:'Benjamín Carvajal',footNm:'Benjamín Carvajal',footRt:'Fotógrafo · 2026',greet:'— hola',bio:'Disponible en Latinoamérica y Europa.',email:'hola@benjaminc.com',phone:'+54 11 0000-0000',ig:'@benjaminsimonc',igUrl:'https://instagram.com/benjaminsimonc'};
-let D=Object.assign({},DEF),PHOTOS=[];
-
-// ================================================================
-// LOAD
-// ================================================================
-async function loadAll(){
-  showLd(true);
-  if(!isConfigured()){
-    try{const s=localStorage.getItem(LOCAL_KEY);if(s){const p=JSON.parse(s);D=Object.assign({},DEF,p.settings||{});PHOTOS=p.photos||[];}}catch(e){}
-    render();showLd(false);return;
+function doLogin() {
+  const u = document.getElementById('l-user').value.trim();
+  const p = document.getElementById('l-pass').value;
+  if (CREDS[u] && CREDS[u] === p) {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'flex';
+    document.getElementById('tb-user').textContent = u;
+    initPanel();
+  } else {
+    document.getElementById('l-err').style.display = 'block';
   }
-  try{
-    const{data:rows}=await sb.from(T_SET).select('key,value');
-    if(rows)rows.forEach(r=>{D[r.key]=r.value;});
-    const{data:ph}=await sb.from(T_PH).select('id,url,caption,order_idx').order('order_idx',{ascending:true});
-    PHOTOS=ph||[];
-  }catch(e){toast('Error de conexión');}
-  render();showLd(false);
 }
 
-// ================================================================
-// SAVE
-// ================================================================
-async function saveSettings(){
-  if(!isConfigured()){
-    const ex=JSON.parse(localStorage.getItem(LOCAL_KEY)||'{}');
-    ex.settings=D;ex.photos=PHOTOS;
-    localStorage.setItem(LOCAL_KEY,JSON.stringify(ex));return true;
-  }
-  const rows=Object.keys(D).map(k=>({key:k,value:D[k]}));
-  const{error}=await sb.from(T_SET).upsert(rows,{onConflict:'key'});
-  return!error;
+function doLogout() {
+  document.getElementById('dashboard').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('l-pass').value = '';
+  document.getElementById('l-err').style.display = 'none';
 }
 
-async function uploadFile(file,onPct){
-  const ext=file.name.split('.').pop();
-  const fn='photo_'+Date.now()+'_'+Math.random().toString(36).slice(2)+'.'+ext;
-  onPct(20);
-  const{error}=await sb.storage.from(BUCKET).upload(fn,file,{cacheControl:'3600',upsert:false});
-  if(error)throw error;
-  onPct(80);
-  const{data}=sb.storage.from(BUCKET).getPublicUrl(fn);
-  onPct(100);return data.publicUrl;
+/* ── CFG (demo data — reemplazá con tu SITE_CONFIG real) ── */
+let cfg = {
+  nombre: "Benjamín Carvajal",
+  bio_es: "Fotógrafo especializado en retrato, matrimonios y fotografía comercial de moda. Trabajo con marcas y personas que valoran la imagen auténtica.",
+  bio_en: "Photographer specialized in portrait, weddings and commercial fashion photography. I work with brands and people who value authentic imagery.",
+  email: "hola@benjaminsimonc.com",
+  telefono: "+54 9 11 1234-5678",
+  lugares: ["Buenos Aires", "Santiago", "Madrid"],
+  hero_img: "fotos/hero.jpg",
+  categorias: {
+    marcas: { es: "Marcas", en: "Brands" },
+    diary:  { es: "Diary",  en: "Diary"  }
+  },
+  proyectos: [
+    { id: "cresta", nameEs: "Cresta", nameEn: "Cresta", category: "marcas", fotos: ["fotos/cresta/01.jpg","fotos/cresta/02.jpg","fotos/cresta/03.jpg"] },
+    { id: "sole",   nameEs: "Sole",   nameEn: "Sole",   category: "marcas", fotos: ["fotos/sole/01.jpg","fotos/sole/02.jpg"] },
+    { id: "diary",  nameEs: "Diary",  nameEn: "Diary",  category: "diary",  fotos: ["fotos/diary/01.jpg","fotos/diary/02.jpg","fotos/diary/03.jpg"] }
+  ]
+};
+
+/* ── INIT ── */
+function initPanel() {
+  // Populate Bio
+  document.getElementById('b-nombre').value  = cfg.nombre;
+  document.getElementById('b-bio-es').value  = cfg.bio_es;
+  document.getElementById('b-bio-en').value  = cfg.bio_en;
+  document.getElementById('b-email').value   = cfg.email;
+  document.getElementById('b-tel').value     = cfg.telefono;
+  renderLugares();
+
+  // Hero
+  document.getElementById('h-src').value = cfg.hero_img;
+  document.getElementById('hero-preview').src = cfg.hero_img;
+
+  // Projects
+  renderMarcas();
+  renderDiary();
 }
 
-async function addPhoto(url,caption){
-  const order_idx=PHOTOS.length;
-  if(!isConfigured()){
-    const id='loc_'+Date.now();PHOTOS.push({id,url,caption,order_idx});
-    const ex=JSON.parse(localStorage.getItem(LOCAL_KEY)||'{}');ex.photos=PHOTOS;localStorage.setItem(LOCAL_KEY,JSON.stringify(ex));return;
-  }
-  const{data,error}=await sb.from(T_PH).insert({url,caption,order_idx}).select().single();
-  if(!error&&data)PHOTOS.push(data);
+/* ── SECTIONS ── */
+function showSec(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  btn.classList.add('active');
 }
 
-async function removePhoto(id){
-  PHOTOS=PHOTOS.filter(p=>p.id!==id);
-  if(!isConfigured()){const ex=JSON.parse(localStorage.getItem(LOCAL_KEY)||'{}');ex.photos=PHOTOS;localStorage.setItem(LOCAL_KEY,JSON.stringify(ex));return;}
-  await sb.from(T_PH).delete().eq('id',id);
+/* ── BIO ── */
+function renderLugares() {
+  const list = document.getElementById('lugares-list');
+  list.innerHTML = '';
+  cfg.lugares.forEach((l, i) => {
+    const row = document.createElement('div');
+    row.className = 'lugar-row';
+    row.innerHTML = `<input type="text" value="${l}" onchange="cfg.lugares[${i}]=this.value">
+      <button class="btn-del-small" onclick="delLugar(${i})" title="Quitar">✕</button>`;
+    list.appendChild(row);
+  });
 }
 
-// ================================================================
-// RENDER
-// ================================================================
-function render(){
-  document.getElementById('nav-name').textContent=D.navNm;
-  const img=document.getElementById('hero-img'),ph=document.getElementById('hero-ph');
-  if(D.heroImg){img.src=D.heroImg;img.style.display='block';ph.style.display='none';}
-  else{img.style.display='none';ph.style.display='flex';}
-  document.getElementById('hero-h1').innerHTML=D.heroN1+'<br><em>'+D.heroN2+'</em>';
-  document.getElementById('hero-sub').textContent=D.heroSub;
-  document.getElementById('f-name').textContent=D.footNm;
-  document.getElementById('f-right').textContent=D.footRt;
-  document.getElementById('ct-greet').textContent=D.greet;
-  document.getElementById('ct-bio').textContent=D.bio;
-  const em=document.getElementById('pub-email');em.textContent=D.email;em.href='mailto:'+D.email;
-  const ph2=document.getElementById('pub-phone');ph2.textContent=D.phone;ph2.href='tel:'+D.phone.replace(/\s/g,'');
-  const ig=document.getElementById('pub-ig');ig.textContent=D.ig;ig.href=D.igUrl;
-  renderGallery();
+function addLugar() {
+  cfg.lugares.push('');
+  renderLugares();
+  const inputs = document.querySelectorAll('.lugar-row input');
+  inputs[inputs.length - 1].focus();
 }
 
-function renderGallery(){
-  const g=document.getElementById('pub-gallery'),c=document.getElementById('photo-count');
-  if(!PHOTOS.length){g.innerHTML='<div class="gallery-empty">Galería en construcción</div>';c.textContent='';return;}
-  c.textContent=PHOTOS.length+(PHOTOS.length===1?' foto':' fotos');
-  g.innerHTML=PHOTOS.map((p,i)=>'<div class="gitem" onclick="lbOpen('+i+'"><img src="'+ea(p.url)+'" alt="'+ea(p.caption||'')+'" loading="lazy">'+(p.caption?'<div class="gcap">'+eh(p.caption)+'</div>':'')+'</div>').join('');
+function delLugar(i) {
+  cfg.lugares.splice(i, 1);
+  renderLugares();
 }
 
-function ea(s){return(s||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
-function eh(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-
-// ================================================================
-// LIGHTBOX
-// ================================================================
-let li=0;
-function lbOpen(i){li=i;document.getElementById('lb-img').src=PHOTOS[i].url;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
-function lbClose(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
-function lbNav(d){li=(li+d+PHOTOS.length)%PHOTOS.length;document.getElementById('lb-img').src=PHOTOS[li].url;}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){lbClose();closeModal('login-modal');}if(e.key==='ArrowLeft')lbNav(-1);if(e.key==='ArrowRight')lbNav(1);});
-
-// ================================================================
-// LOGIN
-// ================================================================
-document.getElementById('open-login').addEventListener('click',()=>{document.getElementById('l-user').value='';document.getElementById('l-pass').value='';document.getElementById('l-err').textContent='';document.getElementById('login-modal').classList.add('open');setTimeout(()=>document.getElementById('l-user').focus(),80);});
-function closeModal(id){document.getElementById(id).classList.remove('open');}
-function doLogin(){const u=document.getElementById('l-user').value.trim(),p=document.getElementById('l-pass').value;if(u===D.username&&p===D.password){closeModal('login-modal');openAdmin();}else{document.getElementById('l-err').textContent='Usuario o contraseña incorrectos.';document.getElementById('l-pass').value='';document.getElementById('l-pass').focus();}}
-
-// ================================================================
-// ADMIN
-// ================================================================
-function openAdmin(){fillAdmin();document.getElementById('admin').classList.add('open');document.body.style.overflow='hidden';document.getElementById('sync-st').textContent=isConfigured()?'● nube conectada':'● modo local';}
-function exitAdmin(){document.getElementById('admin').classList.remove('open');document.body.style.overflow='';}
-function sw(id,btn){document.querySelectorAll('.asec').forEach(s=>s.classList.remove('on'));document.querySelectorAll('.atab').forEach(b=>b.classList.remove('on'));document.getElementById(id).classList.add('on');btn.classList.add('on');}
-
-function fillAdmin(){
-  document.getElementById('a-h1').value=D.heroN1;document.getElementById('a-h2').value=D.heroN2;document.getElementById('a-hsub').value=D.heroSub;
-  document.getElementById('a-nav').value=D.navNm;document.getElementById('a-fn').value=D.footNm;document.getElementById('a-fr').value=D.footRt;
-  document.getElementById('a-greet').value=D.greet;document.getElementById('a-bio').value=D.bio;
-  document.getElementById('a-email').value=D.email;document.getElementById('a-phone').value=D.phone;document.getElementById('a-ig').value=D.ig;document.getElementById('a-ig-url').value=D.igUrl;
-  if(D.heroImg)setHz(D.heroImg);
-  renderAGrid();
+function saveBio() {
+  cfg.nombre   = document.getElementById('b-nombre').value;
+  cfg.bio_es   = document.getElementById('b-bio-es').value;
+  cfg.bio_en   = document.getElementById('b-bio-en').value;
+  cfg.email    = document.getElementById('b-email').value;
+  cfg.telefono = document.getElementById('b-tel').value;
+  // Sync lugares from inputs
+  document.querySelectorAll('.lugar-row input').forEach((inp, i) => { cfg.lugares[i] = inp.value; });
+  showOk('bio-ok');
+  flash('✓ Bio guardada');
 }
 
-async function saveAll(){
-  document.querySelectorAll('.acap').forEach(el=>{const p=PHOTOS.find(x=>String(x.id)===String(el.dataset.id));if(p)p.caption=el.value;});
-  D.heroN1=document.getElementById('a-h1').value;D.heroN2=document.getElementById('a-h2').value;D.heroSub=document.getElementById('a-hsub').value;
-  D.navNm=document.getElementById('a-nav').value;D.footNm=document.getElementById('a-fn').value;D.footRt=document.getElementById('a-fr').value;
-  D.greet=document.getElementById('a-greet').value;D.bio=document.getElementById('a-bio').value;
-  D.email=document.getElementById('a-email').value;D.phone=document.getElementById('a-phone').value;D.ig=document.getElementById('a-ig').value;D.igUrl=document.getElementById('a-ig-url').value;
-  const btn=document.getElementById('save-btn');btn.disabled=true;btn.textContent='Guardando…';
-  const ok=await saveSettings();
-  if(isConfigured())await Promise.all(PHOTOS.map(p=>sb.from(T_PH).update({caption:p.caption||''}).eq('id',p.id)));
-  btn.disabled=false;btn.textContent='Guardar cambios';
-  if(ok){render();toast('✓  Cambios guardados');}else toast('Error al guardar');
+/* ── HERO ── */
+function previewHero(val) {
+  document.getElementById('hero-preview').src = val;
 }
 
-// ================================================================
-// HERO FILE/URL
-// ================================================================
-async function heroFile(inp){
-  const f=inp.files[0];if(!f)return;
-  if(!isConfigured()){const r=new FileReader();r.onload=e=>{D.heroImg=e.target.result;setHz(e.target.result);toast('Portada lista — guardá los cambios');};r.readAsDataURL(f);return;}
-  showPp('h',0);
-  try{const url=await uploadFile(f,pct=>showPp('h',pct));D.heroImg=url;setHz(url);toast('Portada lista — guardá los cambios');}
-  catch(e){toast('Error: '+e.message);}
-  hidePp('h');
+function saveHero() {
+  cfg.hero_img = document.getElementById('h-src').value;
+  showOk('hero-ok');
+  flash('✓ Portada actualizada');
 }
-function heroUrl(){const url=document.getElementById('hero-url').value.trim();if(!url)return;D.heroImg=url;setHz(url);document.getElementById('hero-url').value='';toast('Portada lista — guardá los cambios');}
-function setHz(url){const z=document.getElementById('hero-zone');z.style.backgroundImage='url(\''+url+'\')';z.style.backgroundSize='cover';z.style.backgroundPosition='center';z.style.minHeight='150px';}
 
-// ================================================================
-// PORTFOLIO
-// ================================================================
-async function portFile(inp){
-  const files=Array.from(inp.files);if(!files.length)return;
-  const btn=document.getElementById('pbtn');btn.disabled=true;showPp('p',0);
-  if(!isConfigured()){
-    let done=0;
-    files.forEach(f=>{const r=new FileReader();r.onload=async e=>{await addPhoto(e.target.result,'');done++;showPp('p',Math.round(done/files.length*100));if(done===files.length){renderAGrid();renderGallery();hidePp('p');btn.disabled=false;toast('✓ '+files.length+' foto'+(files.length>1?'s':'')+' agregada'+(files.length>1?'s':''));}};r.readAsDataURL(f);});
+/* ── MARCAS ── */
+function renderMarcas() {
+  const container = document.getElementById('marcas-list');
+  container.innerHTML = '';
+  cfg.proyectos.filter(p => p.category === 'marcas').forEach(p => {
+    const pi = cfg.proyectos.indexOf(p);
+    container.appendChild(buildProjectBlock(p, pi));
+  });
+}
+
+function buildProjectBlock(p, pi) {
+  const block = document.createElement('div');
+  block.className = 'project-block';
+  block.id = 'proj-' + pi;
+
+  // Header: editable names + delete
+  const header = document.createElement('div');
+  header.className = 'project-header';
+  header.innerHTML = `
+    <div class="project-name-inputs">
+      <input type="text" value="${p.nameEs}" placeholder="Nombre ES" onchange="cfg.proyectos[${pi}].nameEs=this.value" title="Nombre en español">
+      <input type="text" value="${p.nameEn}" placeholder="Name EN" onchange="cfg.proyectos[${pi}].nameEn=this.value" title="Name in english">
+    </div>
+    <button class="btn-del-project" onclick="deleteProject(${pi})" title="Eliminar proyecto">Eliminar ✕</button>`;
+  block.appendChild(header);
+
+  // Photos list
+  const photoList = document.createElement('div');
+  photoList.className = 'photos-list';
+  photoList.id = 'photos-' + pi;
+  p.fotos.forEach((f, fi) => {
+    photoList.appendChild(buildPhotoRow(pi, fi, f));
+  });
+  block.appendChild(photoList);
+
+  // Add photo btn
+  const addBtn = document.createElement('button');
+  addBtn.className = 'btn-add-photo';
+  addBtn.textContent = '+ Agregar foto';
+  addBtn.onclick = () => addPhoto(pi);
+  block.appendChild(addBtn);
+
+  return block;
+}
+
+function buildPhotoRow(pi, fi, val) {
+  const row = document.createElement('div');
+  row.className = 'photo-row';
+  row.innerHTML = `
+    <input type="text" value="${val}" placeholder="fotos/proyecto/01.jpg" onchange="cfg.proyectos[${pi}].fotos[${fi}]=this.value">
+    <button class="btn-del-small" onclick="deletePhoto(${pi},${fi})" title="Quitar foto">✕</button>`;
+  return row;
+}
+
+function addPhoto(pi) {
+  const val = prompt('Ruta de la foto (ej: fotos/cresta/04.jpg)');
+  if (!val) return;
+  cfg.proyectos[pi].fotos.push(val.trim());
+  renderMarcas();
+  renderDiary();
+  flash('✓ Foto agregada');
+}
+
+function deletePhoto(pi, fi) {
+  cfg.proyectos[pi].fotos.splice(fi, 1);
+  renderMarcas();
+  renderDiary();
+  flash('Foto eliminada');
+}
+
+function deleteProject(pi) {
+  if (!confirm('¿Eliminar el proyecto "' + cfg.proyectos[pi].nameEs + '"?')) return;
+  cfg.proyectos.splice(pi, 1);
+  renderMarcas();
+  flash('Proyecto eliminado');
+}
+
+function addProject(cat) {
+  const nameEs = prompt('Nombre del proyecto (español)');
+  if (!nameEs) return;
+  const nameEn = prompt('Nombre del proyecto (inglés)') || nameEs;
+  const id = nameEs.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-');
+  cfg.proyectos.push({ id, nameEs, nameEn, metaEs: '', metaEn: '', category: cat, fotos: [] });
+  renderMarcas();
+  flash('✓ Proyecto "' + nameEs + '" agregado');
+}
+
+/* ── DIARY ── */
+function renderDiary() {
+  const container = document.getElementById('diary-list');
+  container.innerHTML = '';
+  const diary = cfg.proyectos.find(p => p.category === 'diary');
+  if (!diary) {
+    container.innerHTML = '<p style="font-size:12px;color:var(--g)">No hay proyecto Diary aún.</p>';
     return;
   }
-  let done=0;
-  for(const f of files){
-    try{const url=await uploadFile(f,pct=>showPp('p',Math.round((done+pct/100)/files.length*100)));await addPhoto(url,'');}
-    catch(e){toast('Error subiendo '+f.name);}
-    done++;
-  }
-  hidePp('p');btn.disabled=false;renderAGrid();renderGallery();
-  toast('✓ '+files.length+' foto'+(files.length>1?'s':'')+' agregada'+(files.length>1?'s':''));
+  const pi = cfg.proyectos.indexOf(diary);
+
+  const photoList = document.createElement('div');
+  photoList.className = 'photos-list';
+  diary.fotos.forEach((f, fi) => photoList.appendChild(buildPhotoRow(pi, fi, f)));
+  container.appendChild(photoList);
+
+  const addBtn = document.createElement('button');
+  addBtn.className = 'btn-add-photo';
+  addBtn.style.marginTop = '4px';
+  addBtn.textContent = '+ Agregar foto al Diary';
+  addBtn.onclick = () => addPhoto(pi);
+  container.appendChild(addBtn);
 }
 
-async function portUrl(){
-  const url=document.getElementById('port-url').value.trim(),cap=document.getElementById('port-cap').value.trim();if(!url)return;
-  const btn=document.getElementById('pbtn');btn.disabled=true;btn.textContent='Agregando…';
-  await addPhoto(url,cap);
-  document.getElementById('port-url').value='';document.getElementById('port-cap').value='';
-  renderAGrid();renderGallery();btn.disabled=false;btn.textContent='Agregar';toast('✓  Foto agregada');
+/* ── EXPORT ── */
+function openExport() {
+  const json = JSON.stringify(cfg, null, 2);
+  document.getElementById('export-text').value = `const SITE_CONFIG = ${json};`;
+  document.getElementById('export-modal').style.display = 'flex';
 }
 
-async function delPhoto(id){await removePhoto(id);renderAGrid();renderGallery();toast('Foto eliminada');}
-
-function renderAGrid(){
-  const g=document.getElementById('admin-grid');
-  if(!PHOTOS.length){g.innerHTML='<div class="aempty">Todavía no hay fotos</div>';return;}
-  g.innerHTML=PHOTOS.map(p=>'<div class="apc"><img src="'+ea(p.url)+'" alt="" onerror="this.style.opacity=\'.1\'"><div class="apov"><button class="adel" onclick="delPhoto(\''+p.id+'\')">&#x2715; Eliminar</button></div><input class="acap" data-id="'+p.id+'" type="text" value="'+ea(p.caption||'')+'" placeholder="Descripción…"></div>').join('');
+function closeExport() {
+  document.getElementById('export-modal').style.display = 'none';
 }
 
-// ================================================================
-// PASSWORD
-// ================================================================
-function chgPw(){
-  const c=document.getElementById('pw-c').value,n=document.getElementById('pw-n').value,r=document.getElementById('pw-r').value,err=document.getElementById('pw-err');
-  err.textContent='';
-  if(c!==D.password){err.textContent='Contraseña actual incorrecta.';return;}
-  if(n.length<6){err.textContent='Mínimo 6 caracteres.';return;}
-  if(n!==r){err.textContent='Las contraseñas no coinciden.';return;}
-  D.password=n;saveSettings();
-  document.getElementById('pw-c').value='';document.getElementById('pw-n').value='';document.getElementById('pw-r').value='';
-  toast('✓  Contraseña actualizada');
+function copyConfig() {
+  const ta = document.getElementById('export-text');
+  ta.select();
+  document.execCommand('copy');
+  flash('✓ Copiado al portapapeles');
 }
 
-// ================================================================
-// UI HELPERS
-// ================================================================
-function showLd(v){document.getElementById('ldov').classList.toggle('show',v);}
-function showPp(w,pct){const id=w==='h'?'hprog':'pprog';const bar=document.getElementById(id.replace('prog',''=='h'?'hprog':'pprog')+'-bar'||w+'prog-bar');document.getElementById(w+'prog').classList.add('show');document.getElementById(w+'prog-bar').style.width=pct+'%';document.getElementById(w+'prog-txt').textContent=pct<100?'Subiendo… '+pct+'%':'Completado';}
-function hidePp(w){setTimeout(()=>document.getElementById(w+'prog').classList.remove('show'),1000);}
-let tt;
-function toast(
+/* ── UTILS ── */
+function showOk(id) {
+  const el = document.getElementById(id);
+  el.style.display = 'inline';
+  setTimeout(() => el.style.display = 'none', 2200);
+}
+
+function flash(msg) {
+  const el = document.createElement('div');
+  el.className = 'flash';
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 2400);
+}
+
+// Try to load SITE_CONFIG from the actual site if available
+if (typeof SITE_CONFIG !== 'undefined') {
+  cfg = JSON.parse(JSON.stringify(SITE_CONFIG));
+}
+</script>
+</body>
+</html>
