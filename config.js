@@ -5,8 +5,8 @@
  *  O usá el panel ✦ en la esquina del sitio.
  * =====================================================
  */
-const SITE_CONFIG = {
-  "nombre": "Benjamín Carvajal",
+const SITE_CONFIG = {h
+  "nombre": "BenjaSimon",
   "bio_es": "Fotógrafo especializado en retratos, día a día y fotografía comercial de moda. Trabajo con marcas y personas que valoran la imagen auténtica.",
   "bio_en": "Photographer specialized in portrait, weddings and commercial fashion photography. I work with brands and people who value authentic imagery.",
   "email": "Benjamincarvajal4@gmail.com",
