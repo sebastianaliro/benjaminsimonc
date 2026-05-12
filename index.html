@@ -654,13 +654,16 @@ function saveAll() {
   }
   D.heroN1 = document.getElementById('a-h1').value;
   D.heroN2 = document.getElementById('a-h2').value;
-  D.heroSub = document.getElementById('a-hsub').value;
-  D.navNm = document.getElementById('a-nav').value;
-  D.footNm = document.getElementById('a-fn').value;
-  D.footRt = document.getElementById('a-fr').value;
-  D.greet = document.getElementById('a-greet').value;
-  D.bio = document.getElementById('a-bio').value;
-  D.email = document.getElementById('a-email').value;
+  D.heroSub   = document.getElementById('a-hsub').value;
+  D.heroSubEN = (document.getElementById('a-hsub-en') || {}).value || D.heroSubEN || '';
+  D.navNm     = document.getElementById('a-nav').value;
+  D.footNm    = document.getElementById('a-fn').value;
+  D.footRt    = document.getElementById('a-fr').value;
+  D.greet     = document.getElementById('a-greet').value;
+  D.greetEN   = (document.getElementById('a-greet-en') || {}).value || D.greetEN || '';
+  D.bio       = document.getElementById('a-bio').value;
+  D.bioEN     = (document.getElementById('a-bio-en') || {}).value || D.bioEN || '';
+  D.email     = document.getElementById('a-email').value;
   D.phone = document.getElementById('a-phone').value;
   D.ig = document.getElementById('a-ig').value;
   D.igUrl = document.getElementById('a-ig-url').value;
