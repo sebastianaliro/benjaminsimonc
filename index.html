@@ -193,7 +193,7 @@ footer{border-top:1px solid var(--light);padding:26px 48px;display:flex;justify-
 </section>
 
 <div style="text-align:center;padding:60px 48px;border-top:1px solid var(--light)">
-  <a href="https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/benjamin-carvajal-portfolio.pdf" download="Benjamin-Carvajal-Portfolio.pdf" class="pdf-btn" id="pdf-btn" target="_blank"><span>&#8595;</span> <span id="pdf-btn-txt">Descargar Portafolio Completo</span></a>
+  <a href="#" download class="pdf-btn" id="pdf-btn" target="_blank" style="display:none"><span>&#8595;</span> <span id="pdf-btn-txt">Descargar Portafolio Completo</span></a>
 </div>
 
 <section id="contacto">
@@ -311,6 +311,15 @@ footer{border-top:1px solid var(--light);padding:26px 48px;display:flex;justify-
         <div class="af"><label>Nombre en la navegacion</label><input type="text" id="a-nav"></div>
         <div class="af"><label>Nombre en el pie de pagina</label><input type="text" id="a-fn"></div>
         <div class="af"><label>Texto derecho del pie</label><input type="text" id="a-fr"></div>
+        <hr class="adiv">
+        <div class="af">
+          <label>Link del portfolio descargable (PDF o Drive)</label>
+          <input type="text" id="a-pdfurl" placeholder="https://...">
+          <p style="font-size:11px;color:var(--accent);margin-top:8px">
+            Pega aca el link directo de tu PDF o el link para compartir de Google Drive.
+            Si lo dejas vacio, el boton de descarga no aparece en el sitio.
+          </p>
+        </div>
       </div>
 
       <div class="asec" id="s-clave">
@@ -357,7 +366,8 @@ var DEF = {
   greetEN:'hello', bioEN:'Available in Latin America and Europe.',
   navPortfolioEN:'portfolio.', navContactEN:'contact.',
   email:'hola@benjaminc.com', phone:'+54 11 0000-0000',
-  ig:'@benjaminsimonc', igUrl:'https://instagram.com/benjaminsimonc'
+  ig:'@benjaminsimonc', igUrl:'https://instagram.com/benjaminsimonc',
+  pdfUrl:''
 };
 
 var D = {};
@@ -575,6 +585,13 @@ function render() {
   ph2.textContent = D.phone || ''; ph2.href = 'tel:' + (D.phone||'').replace(/\s/g,'');
   var ig = document.getElementById('pub-ig');
   ig.textContent = D.ig || ''; ig.href = D.igUrl || '#';
+  var pdfBtn = document.getElementById('pdf-btn');
+  if (D.pdfUrl) {
+    pdfBtn.href = D.pdfUrl;
+    pdfBtn.style.display = 'inline-flex';
+  } else {
+    pdfBtn.style.display = 'none';
+  }
   renderGallery();
   applyLang();
 }
@@ -695,6 +712,7 @@ function fillAdmin() {
   document.getElementById('a-phone').value = D.phone || '';
   document.getElementById('a-ig').value = D.ig || '';
   document.getElementById('a-ig-url').value = D.igUrl || '';
+  document.getElementById('a-pdfurl').value = D.pdfUrl || '';
   if (D.heroImg) {
     var z = document.getElementById('hero-zone');
     z.style.backgroundImage = 'url(' + D.heroImg + ')';
@@ -730,6 +748,7 @@ function saveAll() {
   D.phone = document.getElementById('a-phone').value;
   D.ig = document.getElementById('a-ig').value;
   D.igUrl = document.getElementById('a-ig-url').value;
+  D.pdfUrl = document.getElementById('a-pdfurl').value.trim();
   var btn = document.getElementById('save-btn');
   btn.disabled = true; btn.textContent = 'Guardando...';
   saveSettings(function(ok) {
