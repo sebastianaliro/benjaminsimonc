@@ -3,646 +3,901 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Benjamin Carvajal — Fotografo</title>
-<meta name="description" content="Benjamin Carvajal, fotografo. Portfolio profesional. Disponible en Latinoamerica y Europa.">
+<title>Benjamín Carvajal — Fotógrafo</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#1a1a1a; --paper:#fbfaf8; --line:#e8e5df; --muted:#8a8579;
-  --accent:#b08968; --light:#f4f1ea;
+:root{--white:#fff;--off:#f8f7f5;--light:#e8e5e0;--mid:#a8a5a0;--dark:#3a3835;--black:#1c1b19;--accent:#8a8680;--gold:#c9b89a}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--black);font-family:'Jost',sans-serif;font-weight:300}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:26px 48px;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid rgba(0,0,0,.07)}
+.nav-logo{font-family:'Jost',sans-serif;font-size:12px;font-weight:300;letter-spacing:3.5px;text-transform:uppercase;text-decoration:none;color:var(--black)}
+.nav-links{display:flex;gap:36px;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
+.nav-links a{font-size:12px;letter-spacing:1px;text-decoration:none;color:var(--black);transition:color .3s}
+.nav-links a:hover{color:var(--mid)}
+.lang-btn{background:none;border:1px solid var(--light);color:var(--mid);font-family:'Jost',sans-serif;font-size:9px;letter-spacing:2px;padding:5px 10px;cursor:pointer;transition:all .3s;margin-right:8px}.lang-btn:hover{border-color:var(--black);color:var(--black)}
+.pdf-btn{display:inline-flex;align-items:center;gap:8px;margin-top:40px;padding:12px 28px;border:1px solid var(--black);color:var(--black);text-decoration:none;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:all .3s}.pdf-btn:hover{background:var(--black);color:white}
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang-btn{background:none;border:1px solid var(--light);color:var(--mid);font-family:'Jost',sans-serif;font-size:9px;letter-spacing:2px;padding:5px 10px;cursor:pointer;transition:all .3s}
+.lang-btn:hover{border-color:var(--black);color:var(--black)}
+.star-btn{background:none;border:none;cursor:pointer;padding:4px;transition:transform .6s ease,opacity .3s;opacity:.45;line-height:0}
+.star-btn:hover{opacity:.9;transform:rotate(45deg)}
+#inicio{padding-top:78px}
+.hero-inner{height:calc(100vh - 78px);position:relative;overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-placeholder{width:100%;height:100%;background:var(--off);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.hero-placeholder span{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--mid)}
+.hero-caption{position:absolute;bottom:56px;left:48px;color:white}
+.hero-caption h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6.5vw,96px);font-weight:300;line-height:.92}
+.hero-caption h1 em{font-style:italic}
+.hero-caption p{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:16px}
+.port-header{padding:64px 48px 36px;display:flex;justify-content:space-between;align-items:baseline}
+.port-header h2{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;font-style:italic}
+.port-count{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.gitem{overflow:hidden;cursor:pointer;position:relative;background:var(--off)}
+.gitem img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94),opacity .4s}
+.gitem:hover img{transform:scale(1.03);opacity:.9}
+.gcap{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,.55));color:white;font-size:9px;letter-spacing:2px;text-transform:uppercase;opacity:0;transition:opacity .4s}
+.gitem:hover .gcap{opacity:1}
+.gallery-empty{grid-column:1/-1;padding:100px 48px;text-align:center;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mid)}
+.lightbox{display:none;position:fixed;inset:0;z-index:500;background:rgba(28,27,25,.97);align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lightbox img{max-width:88vw;max-height:88vh;object-fit:contain}
+.lb-x{position:absolute;top:24px;right:32px;color:rgba(255,255,255,.5);background:none;border:none;font-size:22px;cursor:pointer;transition:color .3s}
+.lb-x:hover{color:white}
+.lb-arr{position:absolute;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.35);background:none;border:none;font-size:30px;cursor:pointer;padding:16px;transition:color .3s}
+.lb-arr:hover{color:white}
+.lb-l{left:12px}.lb-r{right:12px}
+#contacto{padding:120px 48px 100px;max-width:580px;margin:0 auto;text-align:center;border-top:1px solid var(--light)}
+.ct-greet{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:28px}
+.ct-bio{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;font-weight:300;line-height:1.65;color:var(--dark);margin-bottom:52px}
+.ct-links{display:flex;flex-direction:column;gap:20px;align-items:center}
+.ct-link{font-size:13px;letter-spacing:.5px;color:var(--black);text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent;transition:border-color .3s,color .3s}
+.ct-link:hover{border-color:var(--mid);color:var(--accent)}
+footer{border-top:1px solid var(--light);padding:26px 48px;display:flex;justify-content:space-between;align-items:center}
+.f-name,.f-right{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)}
+.modal-bg{display:none;position:fixed;inset:0;z-index:600;background:rgba(28,27,25,.45);align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.modal-bg.open{display:flex}
+.mbox{background:var(--white);padding:52px 48px;width:90%;max-width:420px;position:relative}
+.mbox h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:4px}
+.mbox .msub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:36px}
+.mx{position:absolute;top:16px;right:20px;background:none;border:none;font-size:18px;cursor:pointer;color:var(--mid)}
+.mf{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.mf label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--mid)}
+.mf input{border:none;border-bottom:1px solid var(--light);padding:11px 0;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;color:var(--black);outline:none;background:transparent;transition:border-color .3s}
+.mf input:focus{border-color:var(--black)}
+.mbtn{width:100%;background:var(--black);color:white;border:none;padding:15px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-top:8px;transition:background .3s}
+.mbtn:hover{background:var(--accent)}
+.merr{font-size:11px;color:#c0392b;margin-top:10px;letter-spacing:.5px;min-height:16px}
+#admin{display:none;position:fixed;inset:0;z-index:700;overflow-y:auto;background:#161513}
+#admin.open{display:block}
+.ah{background:#0d0d0b;padding:17px 36px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;border-bottom:1px solid #242421}
+.ah-logo{font-family:'Cormorant Garamond',serif;font-size:17px;color:#eeebe6;letter-spacing:1px}
+.ah-logo small{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-left:12px}
+.ah-btns{display:flex;gap:10px;align-items:center}
+.ah-save{background:var(--gold);color:#0d0d0b;border:none;padding:8px 22px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:opacity .3s}
+.ah-save:hover{opacity:.75}
+.ah-save:disabled{opacity:.4;cursor:wait}
+.ah-exit{background:transparent;color:var(--accent);border:1px solid #242421;padding:8px 16px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:color .3s}
+.ah-exit:hover{color:#eeebe6}
+.sync-st{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
+.ab{display:grid;grid-template-columns:192px 1fr;min-height:calc(100vh - 54px)}
+.aside{background:#0d0d0b;border-right:1px solid #242421;padding:24px 0}
+.atab{display:block;width:100%;padding:12px 26px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);cursor:pointer;background:none;border:none;border-left:2px solid transparent;text-align:left;transition:all .2s}
+.atab:hover{color:#eeebe6}
+.atab.on{color:#eeebe6;border-left-color:var(--gold)}
+.amain{padding:44px 52px}
+.asec{display:none}
+.asec.on{display:block}
+.asec-t{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#eeebe6;margin-bottom:4px}
+.asec-s{font-size:10px;color:var(--accent);letter-spacing:1px;margin-bottom:32px}
+.af{margin-bottom:24px}
+.af label{display:block;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.af input,.af textarea{width:100%;background:#0d0d0b;border:1px solid #242421;padding:11px 13px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#eeebe6;outline:none;transition:border-color .3s;resize:vertical}
+.af input:focus,.af textarea:focus{border-color:var(--gold)}
+.adiv{border:none;border-top:1px solid #242421;margin:32px 0}
+.uzone{border:1px dashed #242421;padding:32px;text-align:center;cursor:pointer;transition:border-color .3s;margin-bottom:16px;position:relative;background:#0d0d0b}
+.uzone:hover{border-color:var(--gold)}
+.uzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.ui{font-size:26px;display:block;margin-bottom:8px}
+.ut{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.uh{font-size:11px;color:#2e2e2b}
+.urow{display:flex;gap:10px;margin-bottom:24px}
+.uinp{flex:1;background:#0d0d0b;border:1px solid #242421;padding:10px 13px;font-family:'Jost',sans-serif;font-size:12px;font-weight:300;color:#eeebe6;outline:none;transition:border-color .3s}
+.uinp:focus{border-color:var(--gold)}
+.uinp::placeholder{color:#2e2e2b}
+.ubtn{background:#242421;color:#eeebe6;border:none;padding:10px 18px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .3s}
+.ubtn:hover{background:var(--gold);color:#0d0d0b}
+.ubtn:disabled{opacity:.4;cursor:wait}
+.apgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:4px}
+.apc{position:relative;aspect-ratio:2/3;background:#0d0d0b;border:1px solid #242421;overflow:hidden}
+.apc img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .3s}
+.apc:hover img{opacity:.25}
+.apov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.apc:hover .apov{opacity:1}
+.adel{background:#c0392b;color:white;border:none;padding:6px 13px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+.acap{position:absolute;bottom:0;left:0;right:0;background:rgba(13,13,11,.88);border:none;border-top:1px solid #242421;padding:6px 9px;font-family:'Jost',sans-serif;font-size:10px;color:#eeebe6;outline:none;z-index:2}
+.aempty{grid-column:1/-1;padding:56px;text-align:center;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#2e2e2b}
+.srow{display:grid;grid-template-columns:105px 1fr;gap:12px;align-items:center;padding:12px 14px;background:#0d0d0b;border:1px solid #242421;margin-bottom:8px}
+.slbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
+.sinp{background:transparent;border:none;border-bottom:1px solid #242421;padding:7px 0;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#eeebe6;outline:none;width:100%;transition:border-color .3s}
+.sinp:focus{border-color:var(--gold)}
+.pwbox{background:#0d0d0b;border:1px solid #242421;padding:28px;max-width:360px}
+.toast{position:fixed;bottom:32px;right:32px;background:#242421;color:#eeebe6;padding:13px 20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;z-index:999;transform:translateY(70px);opacity:0;transition:all .4s cubic-bezier(.25,.46,.45,.94);pointer-events:none}
+.toast.show{transform:translateY(0);opacity:1}
+.ldov{display:none;position:fixed;inset:0;z-index:800;background:rgba(255,255,255,.9);align-items:center;justify-content:center;flex-direction:column;gap:16px}
+.ldov.show{display:flex}
+.ldspin{width:24px;height:24px;border:2px solid var(--light);border-top-color:var(--black);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ldtxt{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--mid)}
+@media(max-width:768px){
+  nav{padding:18px 24px}
+  .nav-links{display:none}
+  .hero-caption{left:24px;bottom:44px}
+  .port-header{padding:44px 24px 24px}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  #contacto{padding:80px 24px}
+  footer{padding:22px 24px;flex-direction:column;gap:8px;text-align:center}
+  .ab{grid-template-columns:1fr}
+  .aside{display:none}
+  .amain{padding:24px 18px}
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:'Inter',sans-serif; background:var(--paper); color:var(--ink);
-  -webkit-font-smoothing:antialiased; overflow-x:hidden;
-}
-h1,h2,.serif{font-family:'Cormorant Garamond',serif}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:1400px;margin:0 auto;padding:0 48px}
-@media(max-width:768px){.wrap{padding:0 20px}}
-
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:24px 48px;background:rgba(251,250,248,.92);backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--line);
-}
-@media(max-width:768px){nav{padding:18px 20px}}
-.nav-brand{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
-.nav-links{display:flex;gap:32px;align-items:center;font-size:14px;color:var(--muted)}
-.nav-links a:hover{color:var(--ink)}
-.lang-toggle{font-size:12px;letter-spacing:.05em;cursor:pointer;color:var(--muted);border:1px solid var(--line);padding:4px 10px;border-radius:20px}
-.lang-toggle:hover{color:var(--ink);border-color:var(--ink)}
-.admin-dot{width:6px;height:6px;border-radius:50%;background:var(--line);cursor:pointer;transition:.2s}
-.admin-dot:hover{background:var(--accent)}
-
-/* HERO */
-.hero{
-  min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;
-  padding:140px 48px 80px;position:relative;background-size:cover;background-position:center;
-}
-@media(max-width:768px){.hero{padding:120px 20px 60px}}
-.hero::before{
-  content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,250,248,0) 40%,rgba(251,250,248,.95) 100%);
-  pointer-events:none;
-}
-.hero-inner{position:relative;z-index:2}
-.hero h1{font-size:clamp(48px,9vw,128px);font-weight:300;line-height:.95;letter-spacing:-.02em}
-.hero h1 em{font-style:italic;font-weight:400}
-.hero-sub{margin-top:16px;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-
-/* PORTFOLIO */
-.section-head{padding:120px 48px 48px}
-@media(max-width:768px){.section-head{padding:80px 20px 32px}}
-.section-head h2{font-size:clamp(36px,6vw,64px);font-weight:300;font-style:italic}
-.gallery{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
-}
-@media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.gallery{grid-template-columns:1fr}}
-.gallery-item{
-  position:relative;aspect-ratio:4/5;background:var(--light);overflow:hidden;cursor:pointer;
-}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
-.gallery-item:hover img{transform:scale(1.04)}
-.gallery-empty{
-  grid-column:1/-1;padding:80px 20px;text-align:center;color:var(--muted);font-size:14px;
-}
-
-/* PDF BUTTON */
-.pdf-bar{text-align:center;padding:64px 48px;border-top:1px solid var(--line)}
-.pdf-btn{
-  display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:14px 28px;border-radius:30px;
-  transition:.2s;
-}
-.pdf-btn:hover{color:var(--ink);border-color:var(--ink)}
-
-/* CONTACT */
-.contact{padding:140px 48px;border-top:1px solid var(--line)}
-@media(max-width:768px){.contact{padding:90px 20px}}
-.contact-greet{font-size:clamp(40px,7vw,80px);font-weight:300;font-style:italic;margin-bottom:24px}
-.contact-bio{font-size:18px;color:var(--muted);max-width:520px;line-height:1.6;margin-bottom:48px}
-.contact-links{display:flex;flex-wrap:wrap;gap:32px;font-size:15px}
-.contact-links a{border-bottom:1px solid var(--line);padding-bottom:4px;transition:.2s}
-.contact-links a:hover{border-color:var(--ink)}
-
-footer{
-  display:flex;justify-content:space-between;align-items:center;padding:32px 48px;
-  border-top:1px solid var(--line);font-size:12px;color:var(--muted);
-}
-@media(max-width:768px){footer{padding:24px 20px;flex-direction:column;gap:8px}}
-
-/* LIGHTBOX */
-.lightbox{
-  position:fixed;inset:0;background:rgba(15,14,12,.96);z-index:300;
-  display:none;align-items:center;justify-content:center;padding:40px;
-}
-.lightbox.on{display:flex}
-.lightbox img{max-width:90vw;max-height:85vh;object-fit:contain}
-.lightbox-close,.lightbox-prev,.lightbox-next{
-  position:absolute;color:#fff;cursor:pointer;font-size:28px;opacity:.7;transition:.2s;
-  background:none;border:none;
-}
-.lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover{opacity:1}
-.lightbox-close{top:28px;right:36px}
-.lightbox-prev{left:24px;top:50%;transform:translateY(-50%);font-size:36px}
-.lightbox-next{right:24px;top:50%;transform:translateY(-50%);font-size:36px}
-
-/* TOAST */
-.toast{
-  position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);
-  background:var(--ink);color:#fff;padding:12px 22px;border-radius:8px;font-size:13px;
-  opacity:0;pointer-events:none;transition:.3s;z-index:500;
-}
-.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
-
-/* LOGIN MODAL */
-.modal-bg{
-  position:fixed;inset:0;background:rgba(15,14,12,.5);z-index:400;display:none;
-  align-items:center;justify-content:center;padding:20px;
-}
-.modal-bg.on{display:flex}
-.modal{background:#fff;border-radius:12px;padding:40px;width:100%;max-width:360px}
-.modal h3{font-size:22px;font-weight:400;margin-bottom:24px;font-family:'Cormorant Garamond',serif;font-style:italic}
-.field{margin-bottom:16px}
-.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
-.field input,.field textarea{
-  width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:6px;font-size:14px;
-  font-family:inherit;background:var(--paper);
-}
-.field textarea{resize:vertical;min-height:70px}
-.btn{
-  width:100%;padding:12px;border:none;border-radius:6px;background:var(--ink);color:#fff;
-  font-size:14px;cursor:pointer;transition:.2s;
-}
-.btn:hover{background:#000}
-.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
-.btn-ghost:hover{color:var(--ink);border-color:var(--ink)}
-.err-msg{font-size:12px;color:#b33;margin-top:8px;display:none}
-.modal-close{position:absolute;top:18px;right:18px;cursor:pointer;color:var(--muted);font-size:20px;background:none;border:none}
 </style>
 </head>
 <body>
 
+<div class="ldov" id="ldov"><div class="ldspin"></div><p class="ldtxt">Cargando</p></div>
+
 <nav>
-  <a href="#inicio" class="nav-brand" id="nav-brand-txt">Benjamin Carvajal</a>
-  <div class="nav-links">
-    <a href="#portfolio" data-i18n="nav_portfolio">portfolio.</a>
-    <a href="#contacto" data-i18n="nav_contacto">contact.</a>
-    <span class="lang-toggle" id="lang-toggle" onclick="toggleLang()">EN</span>
-    <span class="admin-dot" id="admin-dot" onclick="openLogin()" title="Acceso administracion"></span>
+  <a href="#inicio" class="nav-logo" id="nav-name">Benjamin Carvajal</a>
+  <ul class="nav-links">
+    <li><a href="#portfolio" id="nav-link-portfolio">portfolio.</a></li>
+    <li><a href="#contacto" id="nav-link-contact">contact.</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" id="lang-btn" onclick="toggleLang()">EN</button>
+    <button class="star-btn" id="open-login" title="Administracion">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C12 2 13 8 12 12C11 16 12 22 12 22" stroke="#888480" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M2 12C2 12 8 11 12 12C16 13 22 12 22 12" stroke="#888480" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M5.5 5.5C5.5 5.5 9 9 12 12C15 15 18.5 18.5 18.5 18.5" stroke="#888480" stroke-width="0.6" stroke-linecap="round" opacity="0.4"/>
+      <path d="M18.5 5.5C18.5 5.5 15 9 12 12C9 15 5.5 18.5 5.5 18.5" stroke="#888480" stroke-width="0.6" stroke-linecap="round" opacity="0.4"/>
+    </svg>
+  </button>
   </div>
 </nav>
 
-<section class="hero" id="inicio">
+<section id="inicio">
   <div class="hero-inner">
-    <h1 id="hero-name"><span id="hero-n1">Benjamin</span> <em id="hero-n2">Carvajal</em></h1>
-    <div class="hero-sub" id="hero-sub">Fotografo</div>
+    <img id="hero-img" class="hero-img" src="" alt="" style="display:none">
+    <div id="hero-ph" class="hero-placeholder">
+      <span>portada</span>
+      <span style="font-size:9px;opacity:.5;letter-spacing:2px">configurar desde el panel</span>
+    </div>
+    <div class="hero-caption">
+      <h1 id="hero-h1">Benjamin<br><em>Carvajal</em></h1>
+      <p id="hero-sub">Fotografo</p>
+    </div>
   </div>
 </section>
 
 <section id="portfolio">
-  <div class="section-head">
-    <h2 data-i18n="portfolio_title">portfolio.</h2>
+  <div class="port-header">
+    <h2>portfolio.</h2>
+    <span class="port-count" id="photo-count"></span>
   </div>
-  <div class="gallery" id="pub-gallery">
-    <div class="gallery-empty" id="gallery-empty" data-i18n="no_photos">Todavia no hay fotos</div>
-  </div>
+  <div class="gallery" id="pub-gallery"></div>
 </section>
 
-<div class="pdf-bar">
-  <a href="#" download="Benjamin-Carvajal-Portfolio.pdf" class="pdf-btn" id="pdf-btn" target="_blank">
-    <span>&#8595;</span> <span id="pdf-btn-txt" data-i18n="pdf_btn">Descargar Portfolio Completo</span>
-  </a>
+<div style="text-align:center;padding:60px 48px;border-top:1px solid var(--light)">
+  <a href="https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/benjamin-carvajal-portfolio.pdf" download="Benjamin-Carvajal-Portfolio.pdf" class="pdf-btn" id="pdf-btn" target="_blank"><span>&#8595;</span> <span id="pdf-btn-txt">Descargar Portafolio Completo</span></a>
 </div>
 
-<section class="contact" id="contacto">
-  <div class="contact-greet" id="contact-greet">hola</div>
-  <p class="contact-bio" id="contact-bio">Disponible en Latinoamerica y Europa.</p>
-  <div class="contact-links">
-    <a id="contact-email" href="mailto:hola@benjaminc.com">hola@benjaminc.com</a>
-    <a id="contact-phone" href="tel:+5411000000">+54 11 0000-0000</a>
-    <a id="contact-ig" href="https://instagram.com/benjaminsimonc" target="_blank">@benjaminsimonc</a>
+<section id="contacto">
+  <p class="ct-greet" id="ct-greet">hola</p>
+  <p class="ct-bio" id="ct-bio">Disponible en Latinoamerica y Europa.</p>
+  <div class="ct-links">
+    <a href="#" class="ct-link" id="pub-email">hola@benjaminc.com</a>
+    <a href="#" class="ct-link" id="pub-phone">+54 11 0000-0000</a>
+    <a href="#" class="ct-link" id="pub-ig" target="_blank">@benjaminsimonc</a>
   </div>
 </section>
 
 <footer>
-  <span id="foot-name">Benjamin Carvajal</span>
-  <span id="foot-right">Fotografo 2026</span>
+  <span class="f-name" id="f-name">Benjamin Carvajal</span>
+  <span class="f-right" id="f-right">Fotografo 2026</span>
 </footer>
 
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-  <button class="lightbox-prev" onclick="lbNav(-1)">&#8249;</button>
-  <img id="lightbox-img" src="" alt="">
-  <button class="lightbox-next" onclick="lbNav(1)">&#8250;</button>
+<div class="lightbox" id="lb">
+  <button class="lb-x" onclick="lbClose()">x</button>
+  <button class="lb-arr lb-l" onclick="lbNav(-1)">&#8249;</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-arr lb-r" onclick="lbNav(1)">&#8250;</button>
+</div>
+
+<div class="modal-bg" id="login-modal">
+  <div class="mbox">
+    <button class="mx" onclick="closeModal('login-modal')">x</button>
+    <h2>Acceder</h2>
+    <p class="msub">Panel de administracion</p>
+    <div class="mf"><label>Usuario</label><input type="text" id="l-user" autocomplete="username"></div>
+    <div class="mf"><label>Contrasena</label><input type="password" id="l-pass" autocomplete="current-password"></div>
+    <button class="mbtn" onclick="doLogin()">Ingresar</button>
+    <div class="merr" id="l-err"></div>
+  </div>
+</div>
+
+<div id="admin">
+  <div class="ah">
+    <div class="ah-logo">BC <small>Administracion</small></div>
+    <div class="ah-btns">
+      <span class="sync-st" id="sync-st"></span>
+      <button class="ah-save" id="save-btn" onclick="saveAll()">Guardar cambios</button>
+      <button class="ah-exit" onclick="exitAdmin()">Salir</button>
+    </div>
+  </div>
+  <div class="ab">
+    <div class="aside">
+      <button class="atab on" onclick="sw('s-inicio',this)">Portada</button>
+      <button class="atab" onclick="sw('s-portfolio',this)">Portfolio</button>
+      <button class="atab" onclick="sw('s-contacto',this)">Contacto</button>
+      <button class="atab" onclick="sw('s-general',this)">General</button>
+      <button class="atab" onclick="sw('s-clave',this)">Contrasena</button>
+    </div>
+    <div class="amain">
+
+      <div class="asec on" id="s-inicio">
+        <h2 class="asec-t">Portada</h2>
+        <p class="asec-s">Imagen de fondo y texto principal</p>
+        <div class="uzone" id="hero-zone">
+          <input type="file" accept="image/*" id="hero-file" onchange="heroFile(this)">
+          <span class="ui">&#128248;</span>
+          <p class="ut">Subir foto desde la computadora</p>
+          <p class="uh">JPG / PNG / WebP</p>
+        </div>
+        <div class="urow">
+          <input type="text" class="uinp" id="hero-url" placeholder="O pega un link de imagen (Canva, Drive...)">
+          <button class="ubtn" onclick="heroUrl()">Usar link</button>
+        </div>
+        <hr class="adiv">
+        <div class="af"><label>Nombre linea 1</label><input type="text" id="a-h1"></div>
+        <div class="af"><label>Nombre linea 2 (italica)</label><input type="text" id="a-h2"></div>
+        <p style="font-size:10px;color:#c9b89a;letter-spacing:1px;margin:8px 0 20px">ESPAÑOL</p>
+        <div class="af"><label>Subtitulo (ES)</label><input type="text" id="a-hsub"></div>
+        <p style="font-size:10px;color:#c9b89a;letter-spacing:1px;margin:8px 0 20px">ENGLISH</p>
+        <div class="af"><label>Subtitle (EN)</label><input type="text" id="a-hsub-en"></div>
+      </div>
+
+      <div class="asec" id="s-portfolio">
+        <h2 class="asec-t">Portfolio</h2>
+        <p class="asec-s">Agrega, edita y elimina fotos de tu galeria</p>
+        <div class="uzone">
+          <input type="file" accept="image/*" multiple id="port-file" onchange="portFile(this)">
+          <span class="ui">&#128444;</span>
+          <p class="ut">Subir fotos desde la computadora</p>
+          <p class="uh">Podes seleccionar varias a la vez</p>
+        </div>
+        <div class="urow">
+          <input type="text" class="uinp" id="port-url" placeholder="Link de imagen (Canva, Drive...)">
+          <input type="text" class="uinp" id="port-cap" placeholder="Descripcion (opcional)" style="max-width:180px">
+          <button class="ubtn" id="pbtn" onclick="portUrl()">Agregar</button>
+        </div>
+        <div class="apgrid" id="admin-grid"><div class="aempty">Todavia no hay fotos</div></div>
+      </div>
+
+      <div class="asec" id="s-contacto">
+        <h2 class="asec-t">Contacto</h2>
+        <p class="asec-s">Textos en español e inglés visibles en el sitio</p>
+        <p style="font-size:10px;color:#c9b89a;letter-spacing:1px;margin-bottom:24px">ESPAÑOL</p>
+        <div class="af"><label>Saludo (ES)</label><input type="text" id="a-greet"></div>
+        <div class="af"><label>Bio / texto (ES)</label><textarea id="a-bio" rows="3"></textarea></div>
+        <hr class="adiv">
+        <p style="font-size:10px;color:#c9b89a;letter-spacing:1px;margin-bottom:24px">ENGLISH</p>
+        <div class="af"><label>Greeting (EN)</label><input type="text" id="a-greet-en"></div>
+        <div class="af"><label>Bio / text (EN)</label><textarea id="a-bio-en" rows="3"></textarea></div>
+        <hr class="adiv">
+        <div class="srow"><span class="slbl">Email</span><input type="email" class="sinp" id="a-email"></div>
+        <div class="srow"><span class="slbl">Telefono</span><input type="text" class="sinp" id="a-phone"></div>
+        <div class="srow"><span class="slbl">Instagram @</span><input type="text" class="sinp" id="a-ig"></div>
+        <div class="srow"><span class="slbl">Link Instagram</span><input type="text" class="sinp" id="a-ig-url"></div>
+      </div>
+
+      <div class="asec" id="s-general">
+        <h2 class="asec-t">General</h2>
+        <p class="asec-s">Textos generales del sitio</p>
+        <div class="af"><label>Nombre en la navegacion</label><input type="text" id="a-nav"></div>
+        <div class="af"><label>Nombre en el pie de pagina</label><input type="text" id="a-fn"></div>
+        <div class="af"><label>Texto derecho del pie</label><input type="text" id="a-fr"></div>
+      </div>
+
+      <div class="asec" id="s-clave">
+        <h2 class="asec-t">Contrasena</h2>
+        <p class="asec-s">Cambia la clave de acceso al panel</p>
+        <div class="pwbox">
+          <div class="af"><label>Contrasena actual</label><input type="password" id="pw-c"></div>
+          <div class="af"><label>Nueva contrasena</label><input type="password" id="pw-n"></div>
+          <div class="af"><label>Confirmar nueva</label><input type="password" id="pw-r"></div>
+          <button class="ah-save" style="width:100%;margin-top:4px" onclick="chgPw()">Cambiar contrasena</button>
+          <div class="merr" id="pw-err"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
-<div class="modal-bg" id="login-modal">
-  <div class="modal" style="position:relative">
-    <button class="modal-close" onclick="closeLogin()">&times;</button>
-    <h3>Acceder</h3>
-    <p style="font-size:12px;color:var(--muted);margin-top:-16px;margin-bottom:20px">Panel de administracion</p>
-    <div class="field"><label>Usuario</label><input type="text" id="login-user"></div>
-    <div class="field"><label>Contrasena</label><input type="password" id="login-pass"></div>
-    <button class="btn" onclick="doLogin()">Ingresar</button>
-    <div class="err-msg" id="login-err">Usuario o contrasena incorrectos</div>
-  </div>
-</div>
-
-<div class="modal-bg" id="admin-panel" style="align-items:flex-start;overflow-y:auto;padding:40px 20px">
-  <div class="modal" style="max-width:640px;position:relative;margin:20px auto">
-    <button class="modal-close" onclick="closeAdmin()">&times;</button>
-    <h3>BC Administracion</h3>
-
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;border-bottom:1px solid var(--line);padding-bottom:16px">
-      <button class="btn-ghost" style="width:auto;padding:6px 14px;font-size:12px" onclick="adminTab('portada')">Portada</button>
-      <button class="btn-ghost" style="width:auto;padding:6px 14px;font-size:12px" onclick="adminTab('portfolio')">Portfolio</button>
-      <button class="btn-ghost" style="width:auto;padding:6px 14px;font-size:12px" onclick="adminTab('contacto')">Contacto</button>
-      <button class="btn-ghost" style="width:auto;padding:6px 14px;font-size:12px" onclick="adminTab('general')">General</button>
-      <button class="btn-ghost" style="width:auto;padding:6px 14px;font-size:12px" onclick="adminTab('clave')">Contrasena</button>
-    </div>
-
-    <div id="tab-portada" class="admin-tab">
-      <p style="font-size:12px;color:var(--muted);margin-bottom:20px">Imagen de fondo y texto principal</p>
-      <div class="field">
-        <label>Imagen de portada</label>
-        <div id="hero-preview" style="margin-bottom:10px"></div>
-        <input type="file" id="a-heroImg-file" accept="image/jpeg,image/png,image/webp" onchange="onHeroFileChange(event)">
-        <p style="font-size:11px;color:var(--muted);margin-top:6px">JPG / PNG / WebP</p>
-        <input type="hidden" id="a-heroImg">
-      </div>
-      <div class="field"><label>Nombre linea 1</label><input type="text" id="a-n1"></div>
-      <div class="field"><label>Nombre linea 2 (italica)</label><input type="text" id="a-n2"></div>
-      <div class="field"><label>Subtitulo (ES)</label><input type="text" id="a-sub-es"></div>
-      <div class="field"><label>Subtitle (EN)</label><input type="text" id="a-sub-en"></div>
-    </div>
-
-    <div id="tab-portfolio" class="admin-tab" style="display:none">
-      <p style="font-size:12px;color:var(--muted);margin-bottom:20px">Agrega, edita y elimina fotos de tu galeria</p>
-      <div class="field">
-        <label>Subir fotos desde la computadora</label>
-        <input type="file" id="a-newphoto-file" accept="image/jpeg,image/png,image/webp" multiple onchange="onGalleryFilesChange(event)">
-        <p style="font-size:11px;color:var(--muted);margin-top:6px">Podes seleccionar varias a la vez</p>
-        <div id="upload-progress" style="font-size:12px;color:var(--muted);margin-top:8px"></div>
-      </div>
-      <div id="a-photo-list" style="display:flex;flex-direction:column;gap:8px;margin-top:20px"></div>
-    </div>
-
-    <div id="tab-contacto" class="admin-tab" style="display:none">
-      <p style="font-size:12px;color:var(--muted);margin-bottom:6px;letter-spacing:.05em">ESPANOL</p>
-      <div class="field"><label>Saludo (ES)</label><input type="text" id="a-greet-es"></div>
-      <div class="field"><label>Bio / texto (ES)</label><textarea id="a-bio-es"></textarea></div>
-      <p style="font-size:12px;color:var(--muted);margin:20px 0 6px;letter-spacing:.05em">ENGLISH</p>
-      <div class="field"><label>Greeting (EN)</label><input type="text" id="a-greet-en"></div>
-      <div class="field"><label>Bio / text (EN)</label><textarea id="a-bio-en"></textarea></div>
-      <hr style="border:none;border-top:1px solid var(--line);margin:20px 0">
-      <div class="field"><label>Email</label><input type="text" id="a-email"></div>
-      <div class="field"><label>Telefono</label><input type="text" id="a-phone"></div>
-      <div class="field"><label>Instagram @</label><input type="text" id="a-ig"></div>
-      <div class="field"><label>Link Instagram</label><input type="text" id="a-igUrl"></div>
-    </div>
-
-    <div id="tab-general" class="admin-tab" style="display:none">
-      <div class="field"><label>Nombre en la navegacion</label><input type="text" id="a-navNm"></div>
-      <div class="field"><label>Nombre en el pie de pagina</label><input type="text" id="a-footNm"></div>
-      <div class="field"><label>Texto derecho del pie</label><input type="text" id="a-footRt"></div>
-      <div class="field"><label>Link PDF del portfolio</label><input type="text" id="a-pdfUrl" placeholder="https://..."></div>
-    </div>
-
-    <div id="tab-clave" class="admin-tab" style="display:none">
-      <p style="font-size:12px;color:var(--muted);margin-bottom:20px">Cambia la clave de acceso al panel</p>
-      <div class="field"><label>Usuario</label><input type="text" id="a-username"></div>
-      <div class="field"><label>Nueva contrasena</label><input type="password" id="a-newpass" placeholder="Dejar vacio para no cambiar"></div>
-    </div>
-
-    <div style="display:flex;gap:10px;margin-top:28px;border-top:1px solid var(--line);padding-top:20px">
-      <button class="btn" onclick="saveAdmin()">Guardar cambios</button>
-      <button class="btn-ghost" onclick="doLogout()">Salir</button>
-    </div>
-    <div class="err-msg" id="save-err"></div>
-  </div>
-</div>
-
 <script>
 /* =================================================================
    PERSISTENCIA VIA GITHUB (reemplaza Supabase)
-   -----------------------------------------------------------------
-   Datos (textos + lista de fotos) se guardan en data.json
-   en la raiz del repo. Las fotos se suben como archivos
-   a la carpeta /photos. Todo via GitHub Contents API.
-
-   El token se guarda en localStorage del navegador del ADMIN
-   unicamente (no es publico, no viaja con el sitio, y nunca se
-   ve en el HTML fuente). Si no esta configurado, el panel pide
-   cargarlo una vez.
+   data.json en la raiz del repo guarda settings + lista de fotos.
+   Las fotos se suben como archivos a /photos via GitHub Contents API
+   y se sirven gratis via jsDelivr CDN. Sin cuotas, sin pausas por
+   facturacion.
 ================================================================= */
+var GH_OWNER  = 'sebastianaliro';
+var GH_REPO   = 'benjaminsimonc';
+var GH_BRANCH = 'main';
+var DATA_PATH = 'data.json';
+var PHOTOS_DIR = 'photos';
 
-const GH_OWNER  = 'sebastianaliro';
-const GH_REPO   = 'benjaminsimonc';
-const GH_BRANCH = 'main';
-const DATA_PATH = 'data.json';
-const PHOTOS_DIR = 'photos';
+var LOCAL_KEY = 'bcv3';
+var DATA_SHA = null;
+
+var DEF = {
+  username:'benjamin', password:'foto2026',
+  heroImg:'', heroN1:'Benjamin', heroN2:'Carvajal', heroSub:'Fotografo',
+  heroSubEN:'Photographer',
+  navNm:'Benjamin Carvajal', footNm:'Benjamin Carvajal', footRt:'Fotografo 2026',
+  greet:'hola', bio:'Disponible en Latinoamerica y Europa.',
+  greetEN:'hello', bioEN:'Available in Latin America and Europe.',
+  navPortfolioEN:'portfolio.', navContactEN:'contact.',
+  email:'hola@benjaminc.com', phone:'+54 11 0000-0000',
+  ig:'@benjaminsimonc', igUrl:'https://instagram.com/benjaminsimonc'
+};
+
+var D = {};
+var PHOTOS = [];
+var tt = null;
+
+function copyObj(src) {
+  var r = {};
+  for (var k in src) r[k] = src[k];
+  return r;
+}
 
 function ghToken(){ return localStorage.getItem('gh_token') || ''; }
 
-async function ghRequest(path, opts={}){
-  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}`;
-  const headers = {
-    'Accept': 'application/vnd.github+json',
-    'Authorization': `Bearer ${ghToken()}`,
-    ...(opts.headers||{})
-  };
-  const res = await fetch(url + (opts.query||''), { ...opts, headers });
-  return res;
-}
-
-async function ghGetFile(path){
-  const res = await ghRequest(path + `?ref=${GH_BRANCH}`);
-  if(res.status === 404) return null;
-  if(!res.ok) throw new Error('Error leyendo ' + path);
-  return await res.json(); // { content (base64), sha, ... }
-}
-
-async function ghPutFile(path, contentStr, sha, message, isBase64=false){
-  const body = {
-    message: message || `Actualizar ${path}`,
-    content: isBase64 ? contentStr : b64EncodeUnicode(contentStr),
-    branch: GH_BRANCH
-  };
-  if(sha) body.sha = sha;
-  const res = await ghRequest(path, { method:'PUT', body: JSON.stringify(body), headers:{'Content-Type':'application/json'} });
-  if(!res.ok){
-    const err = await res.json().catch(()=>({}));
-    throw new Error(err.message || `Error guardando ${path}`);
-  }
-  return await res.json();
-}
-
-function b64EncodeUnicode(str){
-  return btoa(unescape(encodeURIComponent(str)));
-}
-function b64DecodeUnicode(str){
-  return decodeURIComponent(escape(atob(str)));
-}
-
-/* ---------------- ESTADO ---------------- */
-const DEFAULTS = {
-  username:'benjamin', password:'foto2026',
-  heroImg:'', n1:'Benjamin', n2:'Carvajal', subEs:'Fotografo', subEn:'Photographer',
-  navNm:'Benjamin Carvajal', footNm:'Benjamin Carvajal', footRt:'Fotografo 2026',
-  greetEs:'hola', bioEs:'Disponible en Latinoamerica y Europa.',
-  greetEn:'hello', bioEn:'Available in Latin America and Europe.',
-  email:'hola@benjaminc.com', phone:'+54 11 0000-0000',
-  ig:'@benjaminsimonc', igUrl:'https://instagram.com/benjaminsimonc',
-  pdfUrl:'', photos:[]
-};
-let STATE = {...DEFAULTS};
-let DATA_SHA = null;
-let LANG = 'es';
-let LB_INDEX = 0;
-
-async function loadData(){
-  try{
-    const file = await ghGetFile(DATA_PATH);
-    if(file){
-      DATA_SHA = file.sha;
-      const parsed = JSON.parse(b64DecodeUnicode(file.content));
-      STATE = {...DEFAULTS, ...parsed};
-    } else {
-      STATE = {...DEFAULTS};
-    }
-  }catch(e){
-    console.warn('No se pudo cargar data.json, usando valores por defecto', e);
-    STATE = {...DEFAULTS};
-  }
-  render();
-}
-
-async function persistData(){
-  const file = await ghGetFile(DATA_PATH).catch(()=>null);
-  const sha = file ? file.sha : DATA_SHA;
-  const result = await ghPutFile(DATA_PATH, JSON.stringify(STATE, null, 2), sha, 'Actualizar contenido del sitio');
-  DATA_SHA = result.content ? result.content.sha : null;
-}
-
-/* ---------------- RENDER PUBLICO ---------------- */
-const I18N = {
-  es:{ nav_portfolio:'portfolio.', nav_contacto:'contact.', portfolio_title:'portfolio.', no_photos:'Todavia no hay fotos', pdf_btn:'Descargar Portfolio Completo' },
-  en:{ nav_portfolio:'portfolio.', nav_contacto:'contact.', portfolio_title:'portfolio.', no_photos:'No photos yet', pdf_btn:'Download Full Portfolio' }
-};
-
-function render(){
-  document.getElementById('hero-n1').textContent = STATE.n1;
-  document.getElementById('hero-n2').textContent = STATE.n2;
-  document.getElementById('hero-sub').textContent = LANG==='es' ? STATE.subEs : STATE.subEn;
-  document.querySelector('.hero').style.backgroundImage = STATE.heroImg ? `url('${STATE.heroImg}')` : 'none';
-
-  document.getElementById('nav-brand-txt').textContent = STATE.navNm;
-  document.getElementById('foot-name').textContent = STATE.footNm;
-  document.getElementById('foot-right').textContent = STATE.footRt;
-
-  document.getElementById('contact-greet').textContent = LANG==='es' ? STATE.greetEs : STATE.greetEn;
-  document.getElementById('contact-bio').textContent = LANG==='es' ? STATE.bioEs : STATE.bioEn;
-  document.getElementById('contact-email').textContent = STATE.email;
-  document.getElementById('contact-email').href = 'mailto:' + STATE.email;
-  document.getElementById('contact-phone').textContent = STATE.phone;
-  document.getElementById('contact-phone').href = 'tel:' + STATE.phone.replace(/[^0-9+]/g,'');
-  document.getElementById('contact-ig').textContent = STATE.ig;
-  document.getElementById('contact-ig').href = STATE.igUrl;
-
-  const pdfBtn = document.getElementById('pdf-btn');
-  if(STATE.pdfUrl){ pdfBtn.href = STATE.pdfUrl; pdfBtn.style.display=''; } else { pdfBtn.style.display='none'; }
-
-  const gal = document.getElementById('pub-gallery');
-  if(!STATE.photos || STATE.photos.length===0){
-    gal.innerHTML = `<div class="gallery-empty">${I18N[LANG].no_photos}</div>`;
-  } else {
-    gal.innerHTML = STATE.photos.map((p,i)=>`
-      <div class="gallery-item" onclick="openLightbox(${i})">
-        <img src="${p.url}" alt="${p.caption||''}" loading="lazy">
-      </div>
-    `).join('');
-  }
-
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const key = el.getAttribute('data-i18n');
-    if(I18N[LANG][key]) el.textContent = I18N[LANG][key];
-  });
-  document.getElementById('lang-toggle').textContent = LANG==='es' ? 'EN' : 'ES';
-}
-
-function toggleLang(){ LANG = LANG==='es' ? 'en' : 'es'; render(); }
-
-/* ---------------- LIGHTBOX ---------------- */
-function openLightbox(i){
-  LB_INDEX = i;
-  document.getElementById('lightbox-img').src = STATE.photos[i].url;
-  document.getElementById('lightbox').classList.add('on');
-}
-function closeLightbox(){ document.getElementById('lightbox').classList.remove('on'); }
-function lbNav(dir){
-  LB_INDEX = (LB_INDEX + dir + STATE.photos.length) % STATE.photos.length;
-  document.getElementById('lightbox-img').src = STATE.photos[LB_INDEX].url;
-}
-document.addEventListener('keydown', e=>{
-  if(!document.getElementById('lightbox').classList.contains('on')) return;
-  if(e.key==='Escape') closeLightbox();
-  if(e.key==='ArrowLeft') lbNav(-1);
-  if(e.key==='ArrowRight') lbNav(1);
-});
-
-/* ---------------- LOGIN / ADMIN ---------------- */
-function openLogin(){ document.getElementById('login-modal').classList.add('on'); }
-function closeLogin(){ document.getElementById('login-modal').classList.remove('on'); document.getElementById('login-err').style.display='none'; }
-
-function doLogin(){
-  const u = document.getElementById('login-user').value.trim();
-  const p = document.getElementById('login-pass').value;
-  if(u === STATE.username && p === STATE.password){
-    closeLogin();
-    openAdmin();
-  } else {
-    document.getElementById('login-err').style.display='block';
-  }
-}
-
 function ensureToken(){
-  if(ghToken()) return true;
-  const t = prompt('Pega tu GitHub token de acceso (se guarda solo en este navegador):');
-  if(t){ localStorage.setItem('gh_token', t.trim()); return true; }
+  var t = ghToken();
+  if (t) return true;
+  t = prompt('Pega tu GitHub token de acceso (se guarda solo en este navegador):');
+  if (t && t.trim()) { localStorage.setItem('gh_token', t.trim()); return true; }
   return false;
 }
 
-function openAdmin(){
-  if(!ensureToken()) return;
-  fillAdminForm();
-  document.getElementById('admin-panel').classList.add('on');
-  adminTab('portada');
-}
-function closeAdmin(){ document.getElementById('admin-panel').classList.remove('on'); }
-function doLogout(){ closeAdmin(); }
-
-function adminTab(name){
-  document.querySelectorAll('.admin-tab').forEach(t=>t.style.display='none');
-  document.getElementById('tab-'+name).style.display='block';
+function ghApi(path, opts) {
+  opts = opts || {};
+  var url = 'https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + '/contents/' + path;
+  var headers = {
+    'Accept': 'application/vnd.github+json',
+    'Authorization': 'Bearer ' + ghToken()
+  };
+  if (opts.headers) { for (var k in opts.headers) headers[k] = opts.headers[k]; }
+  opts.headers = headers;
+  return fetch(url + (opts.query || ''), opts);
 }
 
-function fillAdminForm(){
-  document.getElementById('a-heroImg').value = STATE.heroImg;
-  document.getElementById('hero-preview').innerHTML = STATE.heroImg ? `<img src="${STATE.heroImg}" style="width:120px;height:80px;object-fit:cover;border-radius:6px">` : '<p style="font-size:12px;color:var(--muted)">Sin imagen todavia</p>';
-  document.getElementById('a-n1').value = STATE.n1;
-  document.getElementById('a-n2').value = STATE.n2;
-  document.getElementById('a-sub-es').value = STATE.subEs;
-  document.getElementById('a-sub-en').value = STATE.subEn;
-  document.getElementById('a-greet-es').value = STATE.greetEs;
-  document.getElementById('a-bio-es').value = STATE.bioEs;
-  document.getElementById('a-greet-en').value = STATE.greetEn;
-  document.getElementById('a-bio-en').value = STATE.bioEn;
-  document.getElementById('a-email').value = STATE.email;
-  document.getElementById('a-phone').value = STATE.phone;
-  document.getElementById('a-ig').value = STATE.ig;
-  document.getElementById('a-igUrl').value = STATE.igUrl;
-  document.getElementById('a-navNm').value = STATE.navNm;
-  document.getElementById('a-footNm').value = STATE.footNm;
-  document.getElementById('a-footRt').value = STATE.footRt;
-  document.getElementById('a-pdfUrl').value = STATE.pdfUrl;
-  document.getElementById('a-username').value = STATE.username;
-  document.getElementById('a-newpass').value = '';
-  renderPhotoList();
+function b64EncodeUnicode(str){ return btoa(unescape(encodeURIComponent(str))); }
+function b64DecodeUnicode(str){ return decodeURIComponent(escape(atob(str))); }
+
+function ghGetFile(path) {
+  return ghApi(path, { query: '?ref=' + GH_BRANCH }).then(function(res){
+    if (res.status === 404) return null;
+    if (!res.ok) throw new Error('Error leyendo ' + path);
+    return res.json();
+  });
 }
 
-function renderPhotoList(){
-  const list = document.getElementById('a-photo-list');
-  if(!STATE.photos.length){ list.innerHTML = '<p style="font-size:12px;color:var(--muted)">Todavia no hay fotos.</p>'; return; }
-  list.innerHTML = STATE.photos.map((p,i)=>`
-    <div style="display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:8px;padding:8px">
-      <img src="${p.url}" style="width:48px;height:48px;object-fit:cover;border-radius:4px">
-      <span style="flex:1;font-size:12px;color:var(--muted)">${p.name||'foto'}</span>
-      <button class="btn-ghost" style="width:auto;padding:4px 10px;font-size:11px" onclick="removePhoto(${i})">Quitar</button>
-    </div>
-  `).join('');
+function ghPutFile(path, contentStr, sha, message, isBase64) {
+  var body = {
+    message: message || ('Actualizar ' + path),
+    content: isBase64 ? contentStr : b64EncodeUnicode(contentStr),
+    branch: GH_BRANCH
+  };
+  if (sha) body.sha = sha;
+  return ghApi(path, { method: 'PUT', body: JSON.stringify(body), headers: {'Content-Type':'application/json'} })
+    .then(function(res){
+      if (!res.ok) {
+        return res.json().catch(function(){ return {}; }).then(function(err){
+          throw new Error(err.message || ('Error guardando ' + path));
+        });
+      }
+      return res.json();
+    });
 }
 
-/* ---------------- SUBIDA DE ARCHIVOS A GITHUB ---------------- */
+function loadLocal() {
+  try {
+    var s = localStorage.getItem(LOCAL_KEY);
+    if (s) {
+      var p = JSON.parse(s);
+      D = copyObj(DEF);
+      var sets = p.settings || {};
+      for (var k in sets) D[k] = sets[k];
+      PHOTOS = p.photos || [];
+    } else {
+      D = copyObj(DEF);
+      PHOTOS = [];
+    }
+  } catch(e) {
+    D = copyObj(DEF);
+    PHOTOS = [];
+  }
+}
+
+function saveLocal() {
+  try {
+    localStorage.setItem(LOCAL_KEY, JSON.stringify({settings: D, photos: PHOTOS}));
+  } catch(e) {}
+}
+
+function showLd(v) {
+  var el = document.getElementById('ldov');
+  if (v) el.classList.add('show');
+  else el.classList.remove('show');
+}
+
+function toast(msg) {
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(tt);
+  tt = setTimeout(function(){ el.classList.remove('show'); }, 3200);
+}
+
+function ea(s) { return (s||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+function eh(s) { return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// ================================================================
+// LOAD  (lee data.json del repo; si no existe, usa valores locales/por defecto)
+// ================================================================
+function loadAll() {
+  showLd(true);
+  loadLocal();
+  ghGetFile(DATA_PATH).then(function(file){
+    if (file) {
+      DATA_SHA = file.sha;
+      var parsed = JSON.parse(b64DecodeUnicode(file.content));
+      D = copyObj(DEF);
+      var sets = parsed.settings || {};
+      for (var k in sets) D[k] = sets[k];
+      PHOTOS = parsed.photos || [];
+    }
+    render();
+    showLd(false);
+  }).catch(function(e){
+    toast('No se pudo conectar con GitHub - usando datos locales');
+    render();
+    showLd(false);
+  });
+}
+
+// ================================================================
+// SAVE  (escribe data.json completo en cada guardado)
+// ================================================================
+function persistRemote(cb) {
+  ghGetFile(DATA_PATH).then(function(file){
+    var sha = file ? file.sha : DATA_SHA;
+    var payload = JSON.stringify({ settings: D, photos: PHOTOS }, null, 2);
+    return ghPutFile(DATA_PATH, payload, sha, 'Actualizar contenido del sitio');
+  }).then(function(result){
+    DATA_SHA = result.content ? result.content.sha : DATA_SHA;
+    if (cb) cb(true);
+  }).catch(function(e){
+    toast('Error guardando en GitHub: ' + e.message);
+    if (cb) cb(false);
+  });
+}
+
+function saveSettings(cb) {
+  saveLocal();
+  if (!ensureToken()) { if (cb) cb(false); return; }
+  persistRemote(cb);
+}
+
+function addPhoto(url, caption, cb) {
+  var order_idx = PHOTOS.length;
+  var id = 'gh_' + Date.now();
+  PHOTOS.push({id: id, url: url, caption: caption, order_idx: order_idx});
+  saveLocal();
+  if (cb) cb();
+}
+
+function removePhoto(id, cb) {
+  PHOTOS = PHOTOS.filter(function(p) { return String(p.id) !== String(id); });
+  saveLocal();
+  if (cb) cb();
+}
+
+function safeFileName(name){
+  var ts = Date.now() + '_' + Math.random().toString(36).slice(2);
+  var clean = name.toLowerCase().replace(/[^a-z0-9.]+/g,'-').replace(/-+/g,'-');
+  return ts + '_' + clean;
+}
 
 function fileToBase64(file){
-  return new Promise((resolve, reject)=>{
-    const reader = new FileReader();
-    reader.onload = () => {
-      // result = "data:image/jpeg;base64,AAAA..."
-      const base64 = reader.result.split(',')[1];
-      resolve(base64);
-    };
+  return new Promise(function(resolve, reject){
+    var reader = new FileReader();
+    reader.onload = function(){ resolve(reader.result.split(',')[1]); };
     reader.onerror = reject;
     reader.readAsDataURL(file);
   });
 }
 
-function safeFileName(name){
-  const ts = Date.now();
-  const clean = name.toLowerCase().replace(/[^a-z0-9.]+/g,'-').replace(/-+/g,'-');
-  return `${ts}_${clean}`;
+function uploadFile(file, cb) {
+  if (!ensureToken()) { cb(null, new Error('Falta el token de GitHub')); return; }
+  fileToBase64(file).then(function(base64){
+    var fn = safeFileName(file.name);
+    var path = PHOTOS_DIR + '/' + fn;
+    return ghPutFile(path, base64, null, 'Subir foto ' + fn, true).then(function(){
+      var publicUrl = 'https://cdn.jsdelivr.net/gh/' + GH_OWNER + '/' + GH_REPO + '@' + GH_BRANCH + '/' + path;
+      cb(publicUrl, null);
+    });
+  }).catch(function(e){ cb(null, e); });
 }
 
-async function uploadImageToGithub(file, statusLabel){
-  const base64 = await fileToBase64(file);
-  const fileName = safeFileName(file.name);
-  const path = `${PHOTOS_DIR}/${fileName}`;
-  await ghPutFile(path, base64, null, `Subir foto ${fileName}`, true);
-  // URL publica via jsDelivr CDN (cachea el contenido del repo, gratis, sin limites de uso normal)
-  const publicUrl = `https://cdn.jsdelivr.net/gh/${GH_OWNER}/${GH_REPO}@${GH_BRANCH}/${path}`;
-  return { url: publicUrl, name: file.name };
+// ================================================================
+// RENDER PUBLIC
+// ================================================================
+function render() {
+  document.getElementById('nav-name').textContent = D.navNm || '';
+  var img = document.getElementById('hero-img');
+  var ph = document.getElementById('hero-ph');
+  if (D.heroImg) {
+    img.src = D.heroImg; img.style.display = 'block'; ph.style.display = 'none';
+  } else {
+    img.style.display = 'none'; ph.style.display = 'flex';
+  }
+  document.getElementById('hero-h1').innerHTML = (D.heroN1||'') + '<br><em>' + (D.heroN2||'') + '</em>';
+  document.getElementById('hero-sub').textContent = D.heroSub || '';
+  document.getElementById('f-name').textContent = D.footNm || '';
+  document.getElementById('f-right').textContent = D.footRt || '';
+  document.getElementById('ct-greet').textContent = D.greet || '';
+  document.getElementById('ct-bio').textContent = D.bio || '';
+  var em = document.getElementById('pub-email');
+  em.textContent = D.email || ''; em.href = 'mailto:' + (D.email||'');
+  var ph2 = document.getElementById('pub-phone');
+  ph2.textContent = D.phone || ''; ph2.href = 'tel:' + (D.phone||'').replace(/\s/g,'');
+  var ig = document.getElementById('pub-ig');
+  ig.textContent = D.ig || ''; ig.href = D.igUrl || '#';
+  renderGallery();
+  applyLang();
 }
 
-async function onHeroFileChange(event){
-  const file = event.target.files[0];
-  if(!file) return;
-  const progress = document.getElementById('hero-preview');
-  progress.innerHTML = '<p style="font-size:12px;color:var(--muted)">Subiendo...</p>';
-  try{
-    const { url } = await uploadImageToGithub(file);
-    document.getElementById('a-heroImg').value = url;
-    progress.innerHTML = `<img src="${url}" style="width:120px;height:80px;object-fit:cover;border-radius:6px">`;
-  }catch(e){
-    progress.innerHTML = `<p style="font-size:12px;color:#b33">Error al subir: ${e.message}</p>`;
+function renderGallery() {
+  var g = document.getElementById('pub-gallery');
+  var c = document.getElementById('photo-count');
+  if (!PHOTOS || !PHOTOS.length) {
+    g.innerHTML = '<div class="gallery-empty">Galeria en construccion</div>';
+    c.textContent = ''; return;
+  }
+  c.textContent = PHOTOS.length + (PHOTOS.length === 1 ? ' foto' : ' fotos');
+  var html = '';
+  for (var i = 0; i < PHOTOS.length; i++) {
+    var p = PHOTOS[i];
+    html += '<div class="gitem" onclick="lbOpen(' + i + ')">';
+    html += '<img src="' + ea(p.url) + '" alt="' + ea(p.caption||'') + '" loading="lazy">';
+    if (p.caption) html += '<div class="gcap">' + eh(p.caption) + '</div>';
+    html += '</div>';
+  }
+  g.innerHTML = html;
+}
+
+// ================================================================
+// LIGHTBOX
+// ================================================================
+var li = 0;
+function lbOpen(i) {
+  li = i;
+  document.getElementById('lb-img').src = PHOTOS[i].url;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function lbClose() {
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function lbNav(d) {
+  li = (li + d + PHOTOS.length) % PHOTOS.length;
+  document.getElementById('lb-img').src = PHOTOS[li].url;
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') { lbClose(); closeModal('login-modal'); }
+  if (e.key === 'ArrowLeft') lbNav(-1);
+  if (e.key === 'ArrowRight') lbNav(1);
+});
+
+// ================================================================
+// LOGIN
+// ================================================================
+document.getElementById('open-login').addEventListener('click', function() {
+  document.getElementById('l-user').value = '';
+  document.getElementById('l-pass').value = '';
+  document.getElementById('l-err').textContent = '';
+  document.getElementById('login-modal').classList.add('open');
+  setTimeout(function(){ document.getElementById('l-user').focus(); }, 80);
+});
+
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+document.getElementById('l-pass').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') doLogin();
+});
+
+function doLogin() {
+  var u = document.getElementById('l-user').value.trim();
+  var p = document.getElementById('l-pass').value;
+  if (u === D.username && p === D.password) {
+    closeModal('login-modal');
+    openAdmin();
+  } else {
+    document.getElementById('l-err').textContent = 'Usuario o contrasena incorrectos.';
+    document.getElementById('l-pass').value = '';
+    document.getElementById('l-pass').focus();
   }
 }
 
-async function onGalleryFilesChange(event){
-  const files = Array.from(event.target.files);
-  if(!files.length) return;
-  const progressEl = document.getElementById('upload-progress');
-  for(let i=0; i<files.length; i++){
-    progressEl.textContent = `Subiendo ${i+1} de ${files.length}...`;
-    try{
-      const photo = await uploadImageToGithub(files[i]);
-      STATE.photos.push(photo);
-      renderPhotoList();
-    }catch(e){
-      progressEl.textContent = `Error subiendo ${files[i].name}: ${e.message}`;
-      await new Promise(r=>setTimeout(r, 2000));
+// ================================================================
+// ADMIN
+// ================================================================
+function openAdmin() {
+  fillAdmin();
+  document.getElementById('admin').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('sync-st').textContent = ghToken() ? 'github conectado' : 'sin conectar';
+}
+
+function exitAdmin() {
+  document.getElementById('admin').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function sw(id, btn) {
+  var secs = document.querySelectorAll('.asec');
+  for (var i = 0; i < secs.length; i++) secs[i].classList.remove('on');
+  var tabs = document.querySelectorAll('.atab');
+  for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('on');
+  document.getElementById(id).classList.add('on');
+  btn.classList.add('on');
+}
+
+function fillAdmin() {
+  document.getElementById('a-h1').value = D.heroN1 || '';
+  document.getElementById('a-h2').value = D.heroN2 || '';
+  document.getElementById('a-hsub').value = D.heroSub || '';
+  document.getElementById('a-nav').value = D.navNm || '';
+  document.getElementById('a-fn').value = D.footNm || '';
+  document.getElementById('a-fr').value = D.footRt || '';
+  document.getElementById('a-greet').value = D.greet || '';
+  document.getElementById('a-bio').value = D.bio || '';
+  var greetEN = document.getElementById('a-greet-en');
+  if (greetEN) greetEN.value = D.greetEN || '';
+  var bioEN = document.getElementById('a-bio-en');
+  if (bioEN) bioEN.value = D.bioEN || '';
+  var hsubEN = document.getElementById('a-hsub-en');
+  if (hsubEN) hsubEN.value = D.heroSubEN || '';
+  document.getElementById('a-email').value = D.email || '';
+  document.getElementById('a-phone').value = D.phone || '';
+  document.getElementById('a-ig').value = D.ig || '';
+  document.getElementById('a-ig-url').value = D.igUrl || '';
+  if (D.heroImg) {
+    var z = document.getElementById('hero-zone');
+    z.style.backgroundImage = 'url(' + D.heroImg + ')';
+    z.style.backgroundSize = 'cover';
+    z.style.backgroundPosition = 'center';
+    z.style.minHeight = '150px';
+  }
+  renderAdminGrid();
+}
+
+function saveAll() {
+  var caps = document.querySelectorAll('.acap');
+  for (var i = 0; i < caps.length; i++) {
+    var el = caps[i];
+    var p = null;
+    for (var j = 0; j < PHOTOS.length; j++) {
+      if (String(PHOTOS[j].id) === String(el.dataset.id)) { p = PHOTOS[j]; break; }
     }
+    if (p) p.caption = el.value;
   }
-  progressEl.textContent = `${files.length} foto(s) lista(s). No olvides tocar "Guardar cambios".`;
-  event.target.value = '';
+  D.heroN1 = document.getElementById('a-h1').value;
+  D.heroN2 = document.getElementById('a-h2').value;
+  D.heroSub   = document.getElementById('a-hsub').value;
+  D.heroSubEN = (document.getElementById('a-hsub-en') || {}).value || D.heroSubEN || '';
+  D.navNm     = document.getElementById('a-nav').value;
+  D.footNm    = document.getElementById('a-fn').value;
+  D.footRt    = document.getElementById('a-fr').value;
+  D.greet     = document.getElementById('a-greet').value;
+  D.greetEN   = (document.getElementById('a-greet-en') || {}).value || D.greetEN || '';
+  D.bio       = document.getElementById('a-bio').value;
+  D.bioEN     = (document.getElementById('a-bio-en') || {}).value || D.bioEN || '';
+  D.email     = document.getElementById('a-email').value;
+  D.phone = document.getElementById('a-phone').value;
+  D.ig = document.getElementById('a-ig').value;
+  D.igUrl = document.getElementById('a-ig-url').value;
+  var btn = document.getElementById('save-btn');
+  btn.disabled = true; btn.textContent = 'Guardando...';
+  saveSettings(function(ok) {
+    btn.disabled = false; btn.textContent = 'Guardar cambios';
+    render(); toast(ok ? 'Cambios guardados' : 'Error al guardar - revisa el token de GitHub');
+  });
 }
 
-function removePhoto(i){
-  STATE.photos.splice(i,1);
-  renderPhotoList();
+// ================================================================
+// HERO
+// ================================================================
+function heroFile(inp) {
+  var f = inp.files[0]; if (!f) return;
+  toast('Subiendo imagen...');
+  uploadFile(f, function(url, err) {
+    if (err) { toast('Error subiendo imagen: ' + err.message); return; }
+    D.heroImg = url; setHz(url); toast('Portada lista - guarda los cambios');
+  });
 }
 
-async function saveAdmin(){
-  const errEl = document.getElementById('save-err');
-  errEl.style.display = 'none';
-  try{
-    STATE.heroImg = document.getElementById('a-heroImg').value.trim();
-    STATE.n1 = document.getElementById('a-n1').value.trim();
-    STATE.n2 = document.getElementById('a-n2').value.trim();
-    STATE.subEs = document.getElementById('a-sub-es').value.trim();
-    STATE.subEn = document.getElementById('a-sub-en').value.trim();
-    STATE.greetEs = document.getElementById('a-greet-es').value.trim();
-    STATE.bioEs = document.getElementById('a-bio-es').value.trim();
-    STATE.greetEn = document.getElementById('a-greet-en').value.trim();
-    STATE.bioEn = document.getElementById('a-bio-en').value.trim();
-    STATE.email = document.getElementById('a-email').value.trim();
-    STATE.phone = document.getElementById('a-phone').value.trim();
-    STATE.ig = document.getElementById('a-ig').value.trim();
-    STATE.igUrl = document.getElementById('a-igUrl').value.trim();
-    STATE.navNm = document.getElementById('a-navNm').value.trim();
-    STATE.footNm = document.getElementById('a-footNm').value.trim();
-    STATE.footRt = document.getElementById('a-footRt').value.trim();
-    STATE.pdfUrl = document.getElementById('a-pdfUrl').value.trim();
-    STATE.username = document.getElementById('a-username').value.trim() || STATE.username;
-    const newPass = document.getElementById('a-newpass').value;
-    if(newPass) STATE.password = newPass;
+function heroUrl() {
+  var url = document.getElementById('hero-url').value.trim();
+  if (!url) return;
+  D.heroImg = url; setHz(url);
+  document.getElementById('hero-url').value = '';
+  toast('Portada lista - guarda los cambios');
+}
 
-    await persistData();
-    render();
-    showToast('Cambios guardados. El sitio se actualiza en ~1 minuto.');
-  }catch(e){
-    errEl.textContent = 'Error al guardar: ' + e.message;
-    errEl.style.display = 'block';
+function setHz(url) {
+  var z = document.getElementById('hero-zone');
+  z.style.backgroundImage = 'url(' + url + ')';
+  z.style.backgroundSize = 'cover'; z.style.backgroundPosition = 'center'; z.style.minHeight = '150px';
+}
+
+// ================================================================
+// PORTFOLIO
+// ================================================================
+function portFile(inp) {
+  var files = Array.from(inp.files); if (!files.length) return;
+  var btn = document.getElementById('pbtn'); btn.disabled = true;
+  function next(i) {
+    if (i >= files.length) {
+      btn.disabled = false; renderAdminGrid(); renderGallery();
+      toast(files.length + ' foto' + (files.length > 1 ? 's' : '') + ' agregada' + (files.length > 1 ? 's' : ''));
+      return;
+    }
+    var f = files[i];
+    toast('Subiendo ' + (i+1) + ' de ' + files.length + '...');
+    uploadFile(f, function(url, err) {
+      if (err) { toast('Error subiendo ' + f.name + ': ' + err.message); next(i+1); return; }
+      addPhoto(url, '', function() { next(i+1); });
+    });
   }
+  next(0);
 }
 
-function showToast(msg){
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('on');
-  setTimeout(()=>t.classList.remove('on'), 3500);
+function portUrl() {
+  var url = document.getElementById('port-url').value.trim();
+  var cap = document.getElementById('port-cap').value.trim();
+  if (!url) return;
+  var btn = document.getElementById('pbtn'); btn.disabled = true; btn.textContent = 'Agregando...';
+  addPhoto(url, cap, function() {
+    document.getElementById('port-url').value = '';
+    document.getElementById('port-cap').value = '';
+    renderAdminGrid(); renderGallery();
+    btn.disabled = false; btn.textContent = 'Agregar';
+    toast('Foto agregada');
+  });
 }
 
-/* ---------------- INIT ---------------- */
-loadData();
+function delPhoto(id) {
+  removePhoto(id, function() { renderAdminGrid(); renderGallery(); toast('Foto eliminada'); });
+}
+
+function renderAdminGrid() {
+  var g = document.getElementById('admin-grid');
+  if (!PHOTOS.length) { g.innerHTML = '<div class="aempty">Todavia no hay fotos</div>'; return; }
+  var html = '';
+  for (var i = 0; i < PHOTOS.length; i++) {
+    var p = PHOTOS[i];
+    html += '<div class="apc">';
+    html += '<img src="' + ea(p.url) + '" alt="" onerror="this.style.opacity=\'.1\'">';
+    html += '<div class="apov"><button class="adel" onclick="delPhoto(\'' + p.id + '\')">x Eliminar</button></div>';
+    html += '<input class="acap" data-id="' + p.id + '" type="text" value="' + ea(p.caption||'') + '" placeholder="Descripcion...">';
+    html += '</div>';
+  }
+  g.innerHTML = html;
+}
+
+// ================================================================
+// PASSWORD
+// ================================================================
+function chgPw() {
+  var c = document.getElementById('pw-c').value;
+  var n = document.getElementById('pw-n').value;
+  var r = document.getElementById('pw-r').value;
+  var err = document.getElementById('pw-err');
+  err.textContent = '';
+  if (c !== D.password) { err.textContent = 'Contrasena actual incorrecta.'; return; }
+  if (n.length < 6) { err.textContent = 'Minimo 6 caracteres.'; return; }
+  if (n !== r) { err.textContent = 'Las contrasenas no coinciden.'; return; }
+  D.password = n;
+  saveSettings(function() {
+    document.getElementById('pw-c').value = '';
+    document.getElementById('pw-n').value = '';
+    document.getElementById('pw-r').value = '';
+    toast('Contrasena actualizada');
+  });
+}
+
+
+var LANG = 'es';
+
+// All translatable strings - es = source of truth from D (Supabase)
+// en values come from D fields with _en suffix
+function getLangData() {
+  return {
+    es: {
+      navPortfolio: 'portfolio.',
+      navContact: 'contact.',
+      heroSub: D.heroSub || '',
+      greet: D.greet || '',
+      bio: D.bio || '',
+      pdf: 'Descargar Portafolio Completo'
+    },
+    en: {
+      navPortfolio: D.navPortfolioEN || 'portfolio.',
+      navContact: D.navContactEN || 'contact.',
+      heroSub: D.heroSubEN || D.heroSub || '',
+      greet: D.greetEN || D.greet || '',
+      bio: D.bioEN || D.bio || '',
+      pdf: 'Download full Portfolio'
+    }
+  };
+}
+
+function applyLang() {
+  var t = getLangData()[LANG];
+  // Nav links
+  var p = document.getElementById('nav-link-portfolio');
+  var c = document.getElementById('nav-link-contact');
+  if (p) p.textContent = t.navPortfolio;
+  if (c) c.textContent = t.navContact;
+  // Hero subtitle
+  var sub = document.getElementById('hero-sub');
+  if (sub) sub.textContent = t.heroSub;
+  // Contact section
+  var greet = document.getElementById('ct-greet');
+  if (greet) greet.textContent = t.greet;
+  var bio = document.getElementById('ct-bio');
+  if (bio) bio.textContent = t.bio;
+  // PDF button
+  var pdfTxt = document.getElementById('pdf-btn-txt');
+  if (pdfTxt) pdfTxt.textContent = t.pdf;
+}
+
+function toggleLang() {
+  LANG = LANG === 'es' ? 'en' : 'es';
+  document.getElementById('lang-btn').textContent = LANG === 'es' ? 'EN' : 'ES';
+  applyLang();
+}
+
+// ================================================================
+// START
+// ================================================================
+window.addEventListener('load', function() {
+  loadAll();
+});
 </script>
 </body>
 </html>
