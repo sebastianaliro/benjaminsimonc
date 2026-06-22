@@ -10,17 +10,354 @@
     "navNm": "Benjamin Carvajal",
     "footNm": "Benjamin Carvajal",
     "footRt": "Fotografo 2026",
-    "greet": "hola",
+    "greet": "Hola!",
     "bio": "Disponible en Latinoamerica y Europa.",
-    "greetEN": "hello",
+    "greetEN": "Hello!",
     "bioEN": "Available in Latin America and Europe.",
     "navPortfolioEN": "portfolio.",
     "navContactEN": "contact.",
-    "email": "hola@benjaminc.com",
-    "phone": "+54 11 0000-0000",
+    "email": "benjamincarvajal4@gmail.com",
+    "phone": "+56998256517",
     "ig": "@benjaminsimonc",
     "igUrl": "https://instagram.com/benjaminsimonc",
     "pdfUrl": ""
   },
-  "photos": []
+  "photos": [
+    {
+      "id": "gh_1782144482638",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144477858_l3gniqm8gf_becaimpresion.jpg",
+      "caption": "",
+      "order_idx": 0
+    },
+    {
+      "id": "gh_1782144497691",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144491419_nc11yboxy7h_becafinal-4.jpg",
+      "caption": "",
+      "order_idx": 1
+    },
+    {
+      "id": "gh_1782144507312",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144504822_xkcr9f8cgnk_-o8a0017.jpg",
+      "caption": "",
+      "order_idx": 2
+    },
+    {
+      "id": "gh_1782144514318",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144511827_k4v2hw3b15_-o8a9048.jpg",
+      "caption": "",
+      "order_idx": 3
+    },
+    {
+      "id": "gh_1782144534041",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144530518_jkxuebsl31_-o8a9091.jpg",
+      "caption": "",
+      "order_idx": 4
+    },
+    {
+      "id": "gh_1782144586366",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144583682_sfw5w5v6jl_000003-1.jpg",
+      "caption": "",
+      "order_idx": 5
+    },
+    {
+      "id": "gh_1782144588619",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144586369_5frds3daogh_000008-1-2.jpg",
+      "caption": "",
+      "order_idx": 6
+    },
+    {
+      "id": "gh_1782144610436",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144603467_stgryfey0b_estrella38-2.jpg",
+      "caption": "",
+      "order_idx": 7
+    },
+    {
+      "id": "gh_1782144616678",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144614478_5s2wd7cmtgb_ks13-1-.jpg",
+      "caption": "",
+      "order_idx": 8
+    },
+    {
+      "id": "gh_1782144619310",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144616688_fudkkhtxs0b_ks18.jpg",
+      "caption": "",
+      "order_idx": 9
+    },
+    {
+      "id": "gh_1782144627836",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144625227_dktr8lcv9ae_000007.jpg",
+      "caption": "",
+      "order_idx": 10
+    },
+    {
+      "id": "gh_1782144630439",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144627838_ravv58x4xh_000012.jpg",
+      "caption": "",
+      "order_idx": 11
+    },
+    {
+      "id": "gh_1782144633163",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144630055_awgnhdynw47_juliaa-5.jpg",
+      "caption": "",
+      "order_idx": 12
+    },
+    {
+      "id": "gh_1782144639101",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144637055_k2ogr7wx8u_000005-recuperado4.jpg",
+      "caption": "",
+      "order_idx": 13
+    },
+    {
+      "id": "gh_1782144641895",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144639105_1ze7mbjcjuh_000013.jpg",
+      "caption": "",
+      "order_idx": 14
+    },
+    {
+      "id": "gh_1782144645246",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144642850_vwxqctc5jx_000010-recuperado.jpg",
+      "caption": "",
+      "order_idx": 15
+    },
+    {
+      "id": "gh_1782144677194",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144674661_0qjj0d8m1me_000001-1-.jpg",
+      "caption": "",
+      "order_idx": 16
+    },
+    {
+      "id": "gh_1782144679653",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144677199_zghap7loeki_000024.jpg",
+      "caption": "",
+      "order_idx": 17
+    },
+    {
+      "id": "gh_1782144681805",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144679658_fcrr44qampb_000025-1-.jpg",
+      "caption": "",
+      "order_idx": 18
+    },
+    {
+      "id": "gh_1782144684364",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144681816_8qifl6c8u6f_000031.jpg",
+      "caption": "",
+      "order_idx": 19
+    },
+    {
+      "id": "gh_1782144687077",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144684371_5uyz9kxwjgd_analoga-cresta-2-.jpg",
+      "caption": "",
+      "order_idx": 20
+    },
+    {
+      "id": "gh_1782144688972",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144686562_3f52lqpzzxg_000011-1.jpg",
+      "caption": "",
+      "order_idx": 21
+    },
+    {
+      "id": "gh_1782144692749",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144690063_9m9lg7jv1rk_image00012-2-.jpeg",
+      "caption": "",
+      "order_idx": 22
+    },
+    {
+      "id": "gh_1782144696690",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144692753_vv6vzcdb1d_000008-1.jpg",
+      "caption": "",
+      "order_idx": 23
+    },
+    {
+      "id": "gh_1782144704741",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144702263_7eyikap5z3_ganga-72.jpg",
+      "caption": "",
+      "order_idx": 24
+    },
+    {
+      "id": "gh_1782144708541",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144705755_aurx7ge16dn_ganga-43-1-.jpg",
+      "caption": "",
+      "order_idx": 25
+    },
+    {
+      "id": "gh_1782144733628",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144725837_c4jod4kx1pp_estrella52.jpg",
+      "caption": "",
+      "order_idx": 26
+    },
+    {
+      "id": "gh_1782144770794",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144765741_d55pq522wpn_crocs5062.jpg",
+      "caption": "",
+      "order_idx": 27
+    },
+    {
+      "id": "gh_1782144782155",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144779719_ixbrm2d42il_000014.jpg",
+      "caption": "",
+      "order_idx": 28
+    },
+    {
+      "id": "gh_1782144792706",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144789401_gipruao69u_000022.jpg",
+      "caption": "",
+      "order_idx": 29
+    },
+    {
+      "id": "gh_1782144873907",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144870282_u7ul7jnn2q_000015-1.jpg",
+      "caption": "",
+      "order_idx": 30
+    },
+    {
+      "id": "gh_1782144891744",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144889269_h9rb8xq7zd_000003.jpg",
+      "caption": "",
+      "order_idx": 31
+    },
+    {
+      "id": "gh_1782144904271",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144900634_95knv1yqp54_260203000012690005.jpg",
+      "caption": "",
+      "order_idx": 32
+    },
+    {
+      "id": "gh_1782144913334",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144910349_rjy626m62i_000002-2.jpg",
+      "caption": "",
+      "order_idx": 33
+    },
+    {
+      "id": "gh_1782144919629",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144915500_pnj03ubicik_000017-2.jpg",
+      "caption": "",
+      "order_idx": 34
+    },
+    {
+      "id": "gh_1782144943438",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144940991_4p06dh41nx3_post-life-4.jpg",
+      "caption": "",
+      "order_idx": 35
+    },
+    {
+      "id": "gh_1782144947841",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144945290_x7yinxmepkb_post-life-1.jpg",
+      "caption": "",
+      "order_idx": 36
+    },
+    {
+      "id": "gh_1782144973550",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144970264_yuzt99x8vhb_taak-6.jpg",
+      "caption": "",
+      "order_idx": 37
+    },
+    {
+      "id": "gh_1782145002729",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144999303_xrwjyeqghim_pavlo-6.jpg",
+      "caption": "",
+      "order_idx": 38
+    },
+    {
+      "id": "gh_1782145015713",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145012241_ubs9gv92i3_pavlo-12.jpg",
+      "caption": "",
+      "order_idx": 39
+    },
+    {
+      "id": "gh_1782145024490",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145020813_dng3urgdlrs_subir-ahora-5.jpg",
+      "caption": "",
+      "order_idx": 40
+    },
+    {
+      "id": "gh_1782145054339",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145052114_ne884quqkp_yousra.jpg",
+      "caption": "",
+      "order_idx": 41
+    },
+    {
+      "id": "gh_1782145123768",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145120782_acwhvnzby4_sin-ti-tulo-1.jpg",
+      "caption": "",
+      "order_idx": 42
+    },
+    {
+      "id": "gh_1782145143427",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145140264_9ul1fgh95ej_crestavideo.jpg",
+      "caption": "",
+      "order_idx": 43
+    },
+    {
+      "id": "gh_1782145166568",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145163659_an4invz9now_crestavideo-20.jpg",
+      "caption": "",
+      "order_idx": 44
+    },
+    {
+      "id": "gh_1782145173940",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145171122_outyct5xoq_crestavideo-37.jpg",
+      "caption": "",
+      "order_idx": 45
+    },
+    {
+      "id": "gh_1782145210707",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145205829_qoqcs7fkhy_descartadas-4.jpg",
+      "caption": "",
+      "order_idx": 46
+    },
+    {
+      "id": "gh_1782145239688",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145237060_dhlr9ciz0w4_nike-16.jpg",
+      "caption": "",
+      "order_idx": 47
+    },
+    {
+      "id": "gh_1782145261294",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145258364_2p2peqenpp2_princesa-alba1-3.jpg",
+      "caption": "",
+      "order_idx": 48
+    },
+    {
+      "id": "gh_1782145267563",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145265267_eb00pvdwk54_-o8a6464.jpg",
+      "caption": "",
+      "order_idx": 49
+    },
+    {
+      "id": "gh_1782145554305",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145551698_h80hchsamse_sinmarco-1-.jpg",
+      "caption": "",
+      "order_idx": 50
+    },
+    {
+      "id": "gh_1782145556872",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145554314_g0wumh5bgl_sinmarco.jpg",
+      "caption": "",
+      "order_idx": 51
+    },
+    {
+      "id": "gh_1782145636389",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145633769_36p3fjd9t0o_000012.jpg",
+      "caption": "",
+      "order_idx": 52
+    },
+    {
+      "id": "gh_1782145648059",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145645627_scjywztcd_sinmarco1.jpg",
+      "caption": "",
+      "order_idx": 53
+    },
+    {
+      "id": "gh_1782145767569",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145765264_itdkb02uxy_000020.jpg",
+      "caption": "",
+      "order_idx": 54
+    },
+    {
+      "id": "gh_1782145787018",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782145784771_glhbefbqkf7_000018.jpg",
+      "caption": "",
+      "order_idx": 55
+    }
+  ]
 }
