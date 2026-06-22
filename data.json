@@ -22,5 +22,12 @@
     "igUrl": "https://instagram.com/benjaminsimonc",
     "pdfUrl": ""
   },
-  "photos": []
+  "photos": [
+    {
+      "id": "gh_1782160159640",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782160157410_fmixonqc2f_000004.jpg",
+      "caption": "",
+      "order_idx": 0
+    }
+  ]
 }
