@@ -2,195 +2,25 @@
   "settings": {
     "username": "benjamin",
     "password": "foto2026",
-    "heroImg": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1776052000973_xd3xa3z9jx.jpg",
-    "heroN1": "Benjamín",
+    "heroImg": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144373803_psf1c9216_000005-2-.jpg",
+    "heroN1": "Benjamin",
     "heroN2": "Carvajal",
-    "heroSub": "Fotógrafo",
+    "heroSub": "Fotografo",
     "heroSubEN": "Photographer",
     "navNm": "Benjamin Carvajal",
     "footNm": "Benjamin Carvajal",
     "footRt": "Fotografo 2026",
-    "greet": "Bienvenido",
-    "bio": "Benjamín Carvajal es un fotógrafo chileno enfocado en moda y documental, trabajando tanto en formato análogo como digital, con una especial afinidad por el proceso análogo. Su obra explora la intimidad y el cuerpo a través de una mirada orgánica y emocional. Actualmente se encuentra disponible para proyectos en Latinoamérica y Europa.\n",
-    "greetEN": "Welcome",
-    "bioEN": "Benjamín Carvajal is a Chilean photographer focused on fashion and documentary photography, working across both analog and digital formats, with a particular affinity for the analog process. His work explores intimacy and the body through an organic and emotional perspective. He is currently available for projects across Latin America and Europe.",
+    "greet": "hola",
+    "bio": "Disponible en Latinoamerica y Europa.",
+    "greetEN": "hello",
+    "bioEN": "Available in Latin America and Europe.",
     "navPortfolioEN": "portfolio.",
     "navContactEN": "contact.",
-    "email": "Benjamincarvajal4@gmail.com",
-    "phone": "+56 9 9825 6517",
+    "email": "hola@benjaminc.com",
+    "phone": "+54 11 0000-0000",
     "ig": "@benjaminsimonc",
     "igUrl": "https://instagram.com/benjaminsimonc",
     "pdfUrl": ""
   },
-  "photos": [
-    {
-      "id": "768ae6df-d8dc-4727-a0c6-b756a5674120",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775074688618_ixtrey8t5y.jpg",
-      "caption": "",
-      "order_idx": 0
-    },
-    {
-      "id": "5acbbc85-8cda-4db7-9ce8-c5bb97cb1677",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775074706335_dch0nf3n78r.jpg",
-      "caption": "",
-      "order_idx": 1
-    },
-    {
-      "id": "1f6dae38-2ffa-40a9-ac5c-c366bbd68f13",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775074727909_m21q8gjgu3a.jpg",
-      "caption": "",
-      "order_idx": 2
-    },
-    {
-      "id": "15fa1e1b-556b-457f-93ec-c8122934526a",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775074778788_4wgo7x2n47d.jpg",
-      "caption": "",
-      "order_idx": 3
-    },
-    {
-      "id": "a1486fa2-d880-4096-aece-076041398ee4",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775074793965_n10imoggbol.jpg",
-      "caption": "",
-      "order_idx": 4
-    },
-    {
-      "id": "f0b356ad-107e-48b2-976f-2d5930ef05e0",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775074820555_cn4gcio8l38.jpg",
-      "caption": "",
-      "order_idx": 5
-    },
-    {
-      "id": "91618a60-00e9-442c-bedc-88b6bdca24ed",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775074821707_rf7effjqaio.jpg",
-      "caption": "",
-      "order_idx": 6
-    },
-    {
-      "id": "6ab06a11-b529-4e08-adae-509f3d4e5910",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775074854435_arpo92nrm8b.jpg",
-      "caption": "",
-      "order_idx": 7
-    },
-    {
-      "id": "2d975add-cf4c-44c7-b9db-d69e61d50ab8",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775074855987_lo8t9mhaexl.jpg",
-      "caption": "",
-      "order_idx": 8
-    },
-    {
-      "id": "b80a6a7f-f05b-490f-a65c-eba1018caf8b",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775583250062_q80ki40gp2d.jpg",
-      "caption": "",
-      "order_idx": 9
-    },
-    {
-      "id": "6065055f-a610-419e-b5f1-b5a0c03c16d9",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775765917875_8owv6lejvcv.jpg",
-      "caption": "",
-      "order_idx": 10
-    },
-    {
-      "id": "b7a080b8-c7e8-477f-93c8-77f0442e6ba5",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775830611530_ubiu7nabbcn.jpg",
-      "caption": "",
-      "order_idx": 11
-    },
-    {
-      "id": "62353556-1427-433e-ac71-e24a1d846703",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775830614558_sz7muk6h9eo.jpg",
-      "caption": "",
-      "order_idx": 12
-    },
-    {
-      "id": "1876108e-b3d9-40e7-86fc-6d754dd69bfa",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775917825520_hrf1tnla3t4.JPG",
-      "caption": "",
-      "order_idx": 14
-    },
-    {
-      "id": "d09a202f-d8ac-491a-946c-1a14679043cc",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775917866707_bss4tzzkz9w.jpg",
-      "caption": "",
-      "order_idx": 15
-    },
-    {
-      "id": "7fab4bd4-9d43-4a88-bb2e-f0e35707065f",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775917933509_kq9y7dosghj.jpg",
-      "caption": "",
-      "order_idx": 16
-    },
-    {
-      "id": "3282c7be-2592-4943-8a0a-6f069e70284e",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775917980855_xsauxuos46p.jpg",
-      "caption": "",
-      "order_idx": 17
-    },
-    {
-      "id": "67fc3095-80af-43a9-a380-2f35b6d4b597",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775917982983_hlaagscjbvk.jpg",
-      "caption": "",
-      "order_idx": 18
-    },
-    {
-      "id": "cc304946-c8fc-4839-acf7-94d20597071d",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775918089327_mepodu3pt2c.jpg",
-      "caption": "",
-      "order_idx": 19
-    },
-    {
-      "id": "6aa318b2-4312-44e2-bcd5-8307610be678",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775918743694_bhzswqyqpk5.jpg",
-      "caption": "",
-      "order_idx": 20
-    },
-    {
-      "id": "8972e41c-919d-4b3e-bcfc-0ce152b514fd",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775918895040_afyev3pysep.JPG",
-      "caption": "",
-      "order_idx": 21
-    },
-    {
-      "id": "1732e17a-3f6d-4aef-9e4f-dfc17fac5206",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775919734764_ieuit7kphl.jpg",
-      "caption": "",
-      "order_idx": 22
-    },
-    {
-      "id": "7787c450-d9ba-4d3d-8ced-dcdd59d385f8",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775919737181_7qsw4sitoqy.jpg",
-      "caption": "",
-      "order_idx": 23
-    },
-    {
-      "id": "577a53ca-4395-4e6d-959d-be792722291c",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775919738342_891mvp7rxte.jpg",
-      "caption": "",
-      "order_idx": 24
-    },
-    {
-      "id": "773aea0e-fcd1-41a6-953d-791ed0ddeb75",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1775919944323_15uu5tclkxo.jpeg",
-      "caption": "",
-      "order_idx": 25
-    },
-    {
-      "id": "19d690df-f8fb-45f1-aa18-0e375d280c59",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1778127525125_getblnyhj2v.jpg",
-      "caption": "",
-      "order_idx": 26
-    },
-    {
-      "id": "be1be40c-1645-4821-a5c6-0b80fb8fcc64",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1778127540124_20acw2xz7wq.JPG",
-      "caption": "",
-      "order_idx": 27
-    },
-    {
-      "id": "3d79ca5a-8363-406e-8cb6-04bb15829489",
-      "url": "https://hoqhzjyriyhdeymcnsmg.supabase.co/storage/v1/object/public/bc-photos/photo_1779814312935_2ii1g04n70t.jpg",
-      "caption": "",
-      "order_idx": 27,
-      "created_at": "2026-05-26T16:51:57.330694"
-    }
-  ]
+  "photos": []
 }
