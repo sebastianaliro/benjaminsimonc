@@ -20,7 +20,7 @@
     "phone": "+56998256517",
     "ig": "@benjaminsimonc",
     "igUrl": "https://instagram.com/benjaminsimonc",
-    "pdfUrl": ""
+    "pdfUrl": "file:///Users/benjamincarvajal/Downloads/BENJAMI%CC%81N%20CARVAJAL%20Foto%CC%81grafo%20(3)_compressed.pdf"
   },
   "photos": [
     {
@@ -304,6 +304,12 @@
       "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782229153528_v2f5bmnl91e_000009.jpg",
       "caption": "",
       "order_idx": 46
+    },
+    {
+      "id": "gh_1782229225860",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782229223301_lsjrhtfpdmf_000023.jpg",
+      "caption": "",
+      "order_idx": 47
     }
   ]
 }
