@@ -2,7 +2,7 @@
   "settings": {
     "username": "benjamin",
     "password": "foto2026",
-    "heroImg": "https://raw.githubusercontent.com/sebastianaliro/benjaminsimonc/main/photos/1783030591881_u1ka8d83qhs_000005.jpeg",
+    "heroImg": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144373803_psf1c9216_000005-2-.jpg",
     "heroN1": "Benjamin",
     "heroN2": "Carvajal",
     "heroSub": "Fotografo",
@@ -238,12 +238,6 @@
       "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782227947584_82bs9785r1j_alucky.jpg",
       "caption": "",
       "order_idx": 35
-    },
-    {
-      "id": "gh_1782227970409",
-      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782227962800_vqqavvb57ri_estrella38-2.jpg",
-      "caption": "",
-      "order_idx": 37
     },
     {
       "id": "gh_1782228011363",
