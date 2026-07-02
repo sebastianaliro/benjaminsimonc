@@ -474,24 +474,23 @@ function ea(s) { return (s||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 function eh(s) { return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
 // ================================================================
-// LOAD  (lee data.json del repo; si no existe, usa valores locales/por defecto)
+// LOAD  (lee data.json via URL publica, sin necesitar token)
 // ================================================================
 function loadAll() {
   showLd(true);
   loadLocal();
-  ghGetFile(DATA_PATH).then(function(file){
-    if (file) {
-      DATA_SHA = file.sha;
-      var parsed = JSON.parse(b64DecodeUnicode(file.content));
-      D = copyObj(DEF);
-      var sets = parsed.settings || {};
-      for (var k in sets) D[k] = sets[k];
-      PHOTOS = parsed.photos || [];
-    }
+  var rawUrl = 'https://raw.githubusercontent.com/' + GH_OWNER + '/' + GH_REPO + '/' + GH_BRANCH + '/' + DATA_PATH + '?t=' + Date.now();
+  fetch(rawUrl).then(function(res){
+    if (!res.ok) throw new Error('No se pudo leer data.json');
+    return res.json();
+  }).then(function(parsed){
+    D = copyObj(DEF);
+    var sets = parsed.settings || {};
+    for (var k in sets) D[k] = sets[k];
+    PHOTOS = parsed.photos || [];
     render();
     showLd(false);
   }).catch(function(e){
-    toast('No se pudo conectar con GitHub - usando datos locales');
     render();
     showLd(false);
   });
