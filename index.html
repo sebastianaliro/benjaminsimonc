@@ -380,7 +380,7 @@ function copyObj(src) {
   return r;
 }
 
-function ghToken(){ return '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'; }
+function ghToken(){ return 'proxy'; }
 
 function ensureToken(){
   var t = ghToken();
@@ -392,10 +392,9 @@ function ensureToken(){
 
 function ghApi(path, opts) {
   opts = opts || {};
-  var url = 'https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + '/contents/' + path;
+  var url = 'https://bc-api.sebastianvalenzuela76.workers.dev/' + path;
   var headers = {
-    'Accept': 'application/vnd.github+json',
-    'Authorization': 'Bearer ' + ghToken()
+    'Accept': 'application/vnd.github+json'
   };
   if (opts.headers) { for (var k in opts.headers) headers[k] = opts.headers[k]; }
   opts.headers = headers;
