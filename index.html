@@ -559,7 +559,7 @@ function uploadFile(file, cb) {
     var fn = safeFileName(file.name);
     var path = PHOTOS_DIR + '/' + fn;
     return ghPutFile(path, base64, null, 'Subir foto ' + fn, true).then(function(){
-      var publicUrl = 'https://raw.githubusercontent.com/' + GH_OWNER + '/' + GH_REPO + '/' + GH_BRANCH + '/' + path;
+      var publicUrl = 'https://cdn.jsdelivr.net/gh/' + GH_OWNER + '/' + GH_REPO + '@' + GH_BRANCH + '/' + path;
       cb(publicUrl, null);
     });
   }).catch(function(e){ cb(null, e); });
