@@ -2,7 +2,7 @@
   "settings": {
     "username": "benjamin",
     "password": "foto2026",
-    "heroImg": "https://raw.githubusercontent.com/sebastianaliro/benjaminsimonc/main/photos/1783032924563_jgw91al9qz_portada.jpg",
+    "heroImg": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782144373803_psf1c9216_000005-2-.jpg",
     "heroN1": "Benjamin",
     "heroN2": "Carvajal",
     "heroSub": "Fotografo",
@@ -240,6 +240,12 @@
       "order_idx": 35
     },
     {
+      "id": "gh_1782227970409",
+      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782227962800_vqqavvb57ri_estrella38-2.jpg",
+      "caption": "",
+      "order_idx": 37
+    },
+    {
       "id": "gh_1782228011363",
       "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782228007717_2gjv39fadxy_000003.jpg",
       "caption": "",
@@ -306,15 +312,9 @@
       "order_idx": 47
     },
     {
-      "id": "gh_1783986259292",
-      "url": "https://raw.githubusercontent.com/sebastianaliro/benjaminsimonc/main/photos/1783986254220_c7n3brmpvg9_000021-1.jpg",
+      "id": "gh_1786975555865",
+      "url": "https://raw.githubusercontent.com/sebastianaliro/benjaminsimonc/main/photos/1786975549872_r9ea3xo9cr_testelite0024-1.jpg",
       "caption": "",
-      "order_idx": 47
-    },
-    {
-      "id": "gh_1786928680953",
-      "url": "https://raw.githubusercontent.com/sebastianaliro/benjaminsimonc/main/photos/1786928679584_zc6tx7cz8x8_captura-de-pantalla-2026-08-07-104218.png",
-      "caption": "prueba",
       "order_idx": 48
     }
   ]
