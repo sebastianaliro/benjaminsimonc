@@ -240,12 +240,6 @@
       "order_idx": 35
     },
     {
-      "id": "gh_1782227970409",
-      "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782227962800_vqqavvb57ri_estrella38-2.jpg",
-      "caption": "",
-      "order_idx": 37
-    },
-    {
       "id": "gh_1782228011363",
       "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782228007717_2gjv39fadxy_000003.jpg",
       "caption": "",
@@ -310,12 +304,6 @@
       "url": "https://cdn.jsdelivr.net/gh/sebastianaliro/benjaminsimonc@main/photos/1782229223301_lsjrhtfpdmf_000023.jpg",
       "caption": "",
       "order_idx": 47
-    },
-    {
-      "id": "gh_1786977686042",
-      "url": "https://raw.githubusercontent.com/sebastianaliro/benjaminsimonc/main/photos/1786977681911_g1kgv9ao9wk_captura-de-pantalla-2026-08-07-091847.png",
-      "caption": "",
-      "order_idx": 48
     }
   ]
 }
